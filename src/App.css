@@ -1,0 +1,66 @@
+.bt-1 {
+  margin-top: 7rem;
+}
+
+.navdiv {
+  width: 100%;
+  height: 5rem;
+  background-color: #022c43;
+  margin: 0rem;
+}
+
+.navdiv nav {
+  height: 100%;
+}
+
+.navdiv ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.navdiv li {
+  margin: 0 1rem;
+  width: 3rem;
+}
+
+.navdiv a {
+  color: white;
+  text-decoration: none;
+}
+
+.navdiv a:hover,
+.navdiv a:active {
+  color: #95bcf0;
+  padding-bottom: 0.25rem;
+  border-bottom: 4px solid #95bcf0;
+}
+
+words-filter {
+  color: white;
+  padding: 0 1rem;
+}
+
+.words-filter__control {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.words-filter label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.words-filter select {
+  font: inherit;
+  padding: 0.5rem 3rem;
+  font-weight: bold;
+  border-radius: 6px;
+}
