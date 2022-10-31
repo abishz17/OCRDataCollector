@@ -3,9 +3,9 @@ import "./App.css";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Datas from "./pages/Datas";
-import { Fragment } from "react";
 import HomeP from "./pages/HomeP";
 import OCR from "./pages/OCR";
+import { Fragment } from "react";
 
 function App() {
   const array = [

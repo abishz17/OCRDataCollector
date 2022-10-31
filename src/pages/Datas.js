@@ -1,10 +1,12 @@
 import React from "react";
 import TextGenerator from "../components/collection/TextGenerator";
+import MyTabs from "../components/MyTabs";
 
 const Datas = (props) => {
   return (
     <div>
-      <TextGenerator data={props.data} />
+      <MyTabs tab1={<TextGenerator data={props.data} />} />
+      {/* <TextGenerator data={props.data} /> */}
     </div>
   );
 };
