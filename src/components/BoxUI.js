@@ -21,7 +21,7 @@ const BoxUI = (props) => {
         }}
       >
         <p>{props.data}</p>
-        <UploadForm />
+        <UploadForm text={props.data} />
       </Box>
     </div>
   );

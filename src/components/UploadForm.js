@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useRef } from "react";
 import axios from "axios";
 
-const UploadForm = () => {
+const UploadForm = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const fileRef = useRef(null);
   const [{ alt, src }, setImg] = useState({
@@ -21,12 +21,19 @@ const UploadForm = () => {
   };
   const uploadHandler = () => {
     const formData = new FormData();
-    formData.append("image", selectedFile, selectedFile.name);
-    console.log(formData);
+    formData.append("image", selectedFile);
+    formData.append("label", props.text);
+    console.log(formData.get("label"));
 
-    axios.post("http://127.0.0.1:8000/api", formData).then((res) => {
-      console.log(res);
-    });
+    axios
+      .post("http://127.0.0.1:8000/api", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        console.log(res);
+      });
   };
   return (
     <div>
@@ -45,7 +52,7 @@ const UploadForm = () => {
       </button>
       <button onClick={uploadHandler}>Upload</button>
       <div>
-        <img className="preview" src={src} alt="" />
+        <img className="preview" src={src} alt={alt} />
       </div>
     </div>
   );
