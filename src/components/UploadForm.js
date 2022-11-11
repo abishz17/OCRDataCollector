@@ -5,8 +5,19 @@ import axios from "axios";
 const UploadForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const fileRef = useRef(null);
+  const [{ alt, src }, setImg] = useState({
+    src: null,
+    alt: "Upload an Image",
+  });
+
   const selectFile = (event) => {
     setSelectedFile(event.target.files[0]);
+    if (event.target.files[0]) {
+      setImg({
+        src: URL.createObjectURL(event.target.files[0]),
+        alt: event.target.files[0].name,
+      });
+    }
   };
   const uploadHandler = () => {
     const formData = new FormData();
@@ -33,6 +44,9 @@ const UploadForm = () => {
         Browse
       </button>
       <button onClick={uploadHandler}>Upload</button>
+      <div>
+        <img className="preview" src={src} alt="" />
+      </div>
     </div>
   );
 };
