@@ -130,3 +130,7 @@ button {
 .active-content {
   display: block;
 }
+
+.image-item {
+  background-color: #e0e9f5;
+}

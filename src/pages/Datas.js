@@ -1,5 +1,5 @@
 import React from "react";
-import TextGenerator from "../components/collection/TextGenerator";
+import TextGenerator from "../components/TextGenerator";
 import MyTabs from "../components/MyTabs";
 
 const Datas = (props) => {

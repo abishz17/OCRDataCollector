@@ -1,11 +1,12 @@
 import React from "react";
+import UploadForm from "./UploadForm";
 
 const Card = (props) => {
   return (
     <div className="card">
       <p>{props.data}</p>
       <div>
-        <form>{/* <input type="file">Upload image</input> */}</form>
+        <UploadForm />
       </div>
     </div>
   );

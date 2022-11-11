@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import Card from "../Card";
-import Ninput from "../Ninput";
+import BoxUI from "./BoxUI";
+
+import Ninput from "./Ninput";
 
 const TextGenerator = (props) => {
   const [isShown, setIsShown] = useState(false);
@@ -18,11 +19,12 @@ const TextGenerator = (props) => {
     return list[Math.floor(Math.random() * list.length)];
   }
 
-  const makeASentence = (arr,n) => {
+  const makeASentence = (arr, n) => {
     let str = "";
     for (let i = 0; i < n; i++) {
       str = str + " " + get_random(arr);
     }
+    str += "|";
     console.log(str);
     return str;
   };
@@ -35,7 +37,7 @@ const TextGenerator = (props) => {
           <button type="submit">Click here to generate random texts</button>
         </form>
 
-        {isShown && <Card data={makeASentence(props.data,number)} />}
+        {isShown && <BoxUI data={makeASentence(props.data, number)} />}
       </div>
     </>
   );
