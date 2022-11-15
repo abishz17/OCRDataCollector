@@ -6,7 +6,7 @@ const Ninput = (props) => {
     props.getNumber(event.target.value);
   };
   return (
-    <div>
+    <div className="ninput">
       <TextField
         type="number"
         InputProps={{

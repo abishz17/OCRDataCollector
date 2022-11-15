@@ -40,16 +40,6 @@
   border-bottom: 4px solid #95bcf0;
 }
 
-.card {
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 10px;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 50px;
-}
-
 .ninput {
   width: 10rem;
 }
@@ -133,4 +123,100 @@ button {
 
 .image-item {
   background-color: #e0e9f5;
+}
+
+.textlabel {
+  margin-top: 50px;
+}
+
+.box {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 1600px;
+  height: 142px;
+  left: 80px;
+  top: 350px;
+
+  background: #d9d9d9;
+  border: 1px dashed #000000;
+  border-radius: 20px;
+}
+
+/* Hero */
+.main {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 1800px;
+  height: 719px;
+  left: 49px;
+  top: 47px;
+  right: 49px;
+
+  background: rgba(83, 54, 80, 0.28);
+  border: 1px solid #000000;
+}
+
+.ninput {
+  margin-top: 20px;
+  width: 300px;
+}
+
+.image {
+  position: absolute;
+  width: 61px;
+  height: 61px;
+  left: 750px;
+  top: 40px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  left: 600px;
+  top: 450px;
+}
+
+.preview {
+  box-sizing: border-box;
+  width: 1610px;
+  height: 140px;
+  left: 80px;
+  top: 350px;
+  border-radius: 20px;
+}
+
+.delete-btn {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  left: 1560px;
+  top: 0px;
+  cursor: pointer;
+}
+
+.textlabel {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 1600px;
+  height: 142px;
+  left: 80px;
+  top: 70px;
+
+  background: #d9d9d9;
+  border: 1px dashed #000000;
+  border-radius: 20px;
+}
+
+.frame {
+  box-sizing: border-box;
+  position: absolute;
+  width: 1404px;
+  height: 49px;
+  left: 80px;
+  top: 128px;
+  border: 1px dashed #000000;
+  justify-content: center;
+  align-items: center;
 }

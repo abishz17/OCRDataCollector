@@ -6,7 +6,6 @@ const Datas = (props) => {
   return (
     <div>
       <MyTabs tab1={<TextGenerator data={props.data} />} />
-      {/* <TextGenerator data={props.data} /> */}
     </div>
   );
 };
