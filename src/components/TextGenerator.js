@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
+import LineText from "./LineText";
 import Ninput from "./Ninput";
 import UploadForm from "./UploadForm";
 
@@ -17,14 +17,19 @@ const TextGenerator = (props) => {
   }
 
   const makeASentence = (arr, n) => {
-    let str = "";
-    for (let i = 0; i < n; i++) {
+    let str = []
+    const par_length =  n*6;
+    for (let i = 0; i < par_length; i++) {
+      
+      if(i%6===0){
+        str=str + "\n"}
       str = str + " " + get_random(arr);
     }
 
     console.log(str);
     return str;
   };
+ 
 
   const onSubmit = () => {
     setIsShown(true);
@@ -39,7 +44,7 @@ const TextGenerator = (props) => {
         {isShown && (
           <>
             <div className="textlabel">
-              {<p>{text}</p>}
+              <LineText text={text}/>
               <button
                 onClick={() => {
                   setText("");

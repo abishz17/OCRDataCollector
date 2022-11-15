@@ -11,11 +11,11 @@ const Ninput = (props) => {
         type="number"
         InputProps={{
           inputProps: {
-            max: 100,
-            min: 10,
+            max: 15,
+            min: 1,
           },
         }}
-        label="No.of words"
+        label="No.of Lines"
         onChange={dropdownChangeHandler}
       />
     </div>
