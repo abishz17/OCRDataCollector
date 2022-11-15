@@ -135,15 +135,21 @@ button {
   position: relative;
   /* align-items: center; */
   width: 80%;
-  height: 80vh;
+  height: 85vh;
 
   background: rgba(83, 54, 80, 0.28);
   border: 1px solid #000000;
 }
 
+.lines{
+  display: flex;
+  align-items: center;}
+
 .ninput {
-  margin-top: 20px;
-  width: 300px;
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  width: 20%;
 }
 
 .image {
@@ -158,6 +164,12 @@ button {
   right: 10%;
   float: right;
   top: 1%;
+}
+
+.btn-generate {
+  position: relative;
+    margin-top: 2%;
+  float: left;
 }
 
 .preview {
@@ -179,28 +191,17 @@ button {
 }
 
 .box {
-    display: block;
-      margin: auto;
+  display: block;
+  margin: auto;
   box-sizing: border-box;
   position: relative;
   margin-top: 5%;
   width: 80%;
   height: 25%;
-
+  overflow-y: auto;
   text-align: center;
+
   background: #d9d9d9;
   border: 1px dashed #000000;
   border-radius: 20px;
-}
-
-.frame {
-  box-sizing: border-box;
-  position: absolute;
-  width: 1404px;
-  height: 49px;
-  left: 80px;
-  top: 128px;
-  border: 1px dashed #000000;
-  justify-content: center;
-  align-items: center;
 }

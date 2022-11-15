@@ -3,6 +3,7 @@ import { useState } from "react";
 import LineText from "./LineText";
 import Ninput from "./Ninput";
 import UploadForm from "./UploadForm";
+import { Button } from "@mui/material";
 
 const TextGenerator = (props) => {
   const [isShown, setIsShown] = useState(false);
@@ -39,26 +40,32 @@ const TextGenerator = (props) => {
   return (
     <>
       <div className="main">
-        <Ninput getNumber={getNumber} />
-        <button onClick={onSubmit}>Click here to generate random texts</button>
+        <div className="lines">
+          <Ninput getNumber={getNumber} />
+          <Button variant="outlined"  className="btn-generate" 
+        onClick={onSubmit}>Generate</Button>
+        </div>
         {isShown && (
+          <>
             <div className="box">
-              {<p>{text}</p>}
-              {/* <button
-                onClick={() => {
-                  setText("");
-                }}
-              >
-                Clear
-              </button> */}
+              <LineText text={text} />
             </div>
+            <Button variant="outlined" className="btn-submit"
+              onClick={() => {
+                setText("");
+              }}
+            >
+              Clear
+            </Button>
+            </>
+            
         )}
         {isShown && (
           <>
             <UploadForm />
-            <Button variant="outlined" className="btn-submit" >
+            {/* <Button variant="outlined" className="btn-submit" >
               Submit
-            </Button>
+            </Button> */}
           </>
         )}
       </div>
