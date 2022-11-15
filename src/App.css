@@ -48,8 +48,8 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  /* /* width: 500px; */
-  height: 900px;
+  width: 100vw;
+  height: 100vh;
   background: #f1f1f1;
   margin: 0px auto 0;
   word-break: break-all;
@@ -125,34 +125,15 @@ button {
   background-color: #e0e9f5;
 }
 
-.textlabel {
-  margin-top: 50px;
-}
-
-.box {
-  box-sizing: border-box;
-
-  position: absolute;
-  width: 1600px;
-  height: 142px;
-  left: 80px;
-  top: 350px;
-
-  background: #d9d9d9;
-  border: 1px dashed #000000;
-  border-radius: 20px;
-}
-
 /* Hero */
 .main {
   box-sizing: border-box;
-
-  position: absolute;
-  width: 1800px;
-  height: 719px;
-  left: 49px;
-  top: 47px;
-  right: 49px;
+  display: block;
+  margin: auto;
+  position: relative;
+  /* align-items: center; */
+  width: 80%;
+  height: 80vh;
 
   background: rgba(83, 54, 80, 0.28);
   border: 1px solid #000000;
@@ -164,17 +145,17 @@ button {
 }
 
 .image {
-  position: absolute;
-  width: 61px;
-  height: 61px;
-  left: 750px;
-  top: 40px;
+  position: relative;
+  margin: auto;
+  margin-top: 5%;
   cursor: pointer;
 }
 
 .btn-submit {
-  left: 600px;
-  top: 450px;
+  position: absolute;
+  right: 10%;
+  float: right;
+  top: 1%;
 }
 
 .preview {
@@ -195,15 +176,16 @@ button {
   cursor: pointer;
 }
 
-.textlabel {
+.box {
+    display: block;
+      margin: auto;
   box-sizing: border-box;
+  position: relative;
+  margin-top: 5%;
+  width: 80%;
+  height: 25%;
 
-  position: absolute;
-  width: 1600px;
-  height: 142px;
-  left: 80px;
-  top: 70px;
-
+  text-align: center;
   background: #d9d9d9;
   border: 1px dashed #000000;
   border-radius: 20px;

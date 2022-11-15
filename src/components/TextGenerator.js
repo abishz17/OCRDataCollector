@@ -38,23 +38,21 @@ const TextGenerator = (props) => {
         <Ninput getNumber={getNumber} />
         <button onClick={onSubmit}>Click here to generate random texts</button>
         {isShown && (
-          <>
-            <div className="textlabel">
+            <div className="box">
               {<p>{text}</p>}
-              <button
+              {/* <button
                 onClick={() => {
                   setText("");
                 }}
               >
                 Clear
-              </button>
+              </button> */}
             </div>
-          </>
         )}
         {isShown && (
           <>
             <UploadForm />
-            <Button variant="outlined" className="btn-submit">
+            <Button variant="outlined" className="btn-submit" >
               Submit
             </Button>
           </>
