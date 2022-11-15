@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { TextField, Button, Typography } from "@mui/material";
 
 import Ninput from "./Ninput";
 import UploadForm from "./UploadForm";
@@ -54,9 +53,6 @@ const TextGenerator = (props) => {
         {isShown && (
           <>
             <UploadForm />
-            <Button variant="outlined" className="btn-submit">
-              Submit
-            </Button>
           </>
         )}
       </div>

@@ -173,8 +173,9 @@ button {
 }
 
 .btn-submit {
-  left: 600px;
-  top: 450px;
+  position: absolute;
+  left: 700px;
+  top: 100px;
 }
 
 .preview {
