@@ -5,7 +5,7 @@ import axios from "axios";
 import { BsImage } from "react-icons/bs";
 import { AiFillDelete } from "react-icons/ai";
 import { Button } from "@mui/material";
-
+import ImageModal from "./ImageModal";
 const UploadForm = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [icon, setIcon] = useState(true);
@@ -43,7 +43,7 @@ const UploadForm = (props) => {
       });
   };
   return (
-    <div className="box">
+    <div className="imageform">
       <input
         style={{ display: "none" }}
         type="file"
@@ -61,7 +61,11 @@ const UploadForm = (props) => {
         </div>
       )}
       <div>
-        {!icon && <img className="preview" src={src} alt={alt} />}
+        {!icon && (
+          <div>
+            <ImageModal src={src} alt={alt} />
+          </div>
+        )}
 
         {!icon && (
           <>
