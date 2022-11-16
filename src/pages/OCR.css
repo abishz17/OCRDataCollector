@@ -14,11 +14,11 @@ html, body, * {
 	
 
  body {
-	padding: 2rem;
+	/* padding: 2rem; */
 	/* background: #134d68; */
 	/* background-image: url("../../black.png"); */
   	/* background-size: auto; */
-	  background-color: #0b0c10;
+	background-color: #0b0c10;
 	background-repeat: no-repeat;} 
 
  .heading {
@@ -248,7 +248,8 @@ h1{
   .loading{
 	position:absolute;
 	width: 100%;
-	top: 40%;
+	top: 30%;
+	left: 50%;
 	z-index: -2;
   }
 

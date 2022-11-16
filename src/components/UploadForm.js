@@ -43,7 +43,8 @@ const UploadForm = (props) => {
       });
   };
   return (
-    <div className="imageform">
+    <>
+    <div className="box">
       <input
         style={{ display: "none" }}
         type="file"
@@ -77,8 +78,9 @@ const UploadForm = (props) => {
             />
           </>
         )}
-
-        {!icon && (
+      </div>
+    </div>
+    {!icon && (
           <Button
             variant="outlined"
             onClick={uploadHandler}
@@ -87,8 +89,8 @@ const UploadForm = (props) => {
             Submit
           </Button>
         )}
-      </div>
-    </div>
+    </>
+    
   );
 };
 

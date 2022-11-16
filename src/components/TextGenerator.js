@@ -58,7 +58,7 @@ const TextGenerator = (props) => {
             {<Modal className="expand" text={text} />}
             <Button
               variant="outlined"
-              className="btn-submit"
+              className="btn-clear"
               onClick={() => {
                 setIsShown(false);
               }}
@@ -69,7 +69,7 @@ const TextGenerator = (props) => {
         )}
         {isShown && (
           <>
-            <UploadForm />
+            <UploadForm />           
           </>
         )}
       </div>

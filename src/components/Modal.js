@@ -5,6 +5,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 
 export default function Modal(props) {
   const [open, setOpen] = React.useState(false);
@@ -31,7 +32,9 @@ export default function Modal(props) {
 
   return (
     <div>
-      <Button onClick={handleClickOpen("paper")}>Expand</Button>
+      <OpenInFullIcon 
+      className="expand-icon"
+      onClick={handleClickOpen("paper")} />
 
       <Dialog
         open={open}
