@@ -1,6 +1,5 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -59,9 +58,12 @@ export default function CustomizedDialogs(props) {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Open dialog
-      </Button>
+      <img
+        className="preview"
+        src={props.src}
+        alt=""
+        onClick={handleClickOpen}
+      />
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"

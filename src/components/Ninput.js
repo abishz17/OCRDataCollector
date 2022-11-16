@@ -1,14 +1,15 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
 
 const Ninput = (props) => {
   const dropdownChangeHandler = (event) => {
     props.getNumber(event.target.value);
   };
   return (
-    <div className="ninput">
       <TextField
         type="number"
+        className="ninput"
         InputProps={{
           inputProps: {
             max: 15,
@@ -18,7 +19,6 @@ const Ninput = (props) => {
         label="No.of Lines"
         onChange={dropdownChangeHandler}
       />
-    </div>
   );
 };
 

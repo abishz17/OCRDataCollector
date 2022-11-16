@@ -1,14 +1,22 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"); */
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html,
+body,
 * {
   box-sizing: border-box;
+  font-size: 16px;
 }
 
-html {
-  font-family: "Noto Sans JP", sans-serif;
-}
-
-body {
-  margin: 0;
-  background-color: #e0e9f5;
-}
+ body {
+   /* padding: 2rem; */
+   /* background: #134d68; */
+   /* background-image: url("../../black.png"); */
+   /* background-size: auto; */
+   background-color: #0b0c10;
+   /* background-repeat: no-repeat; */
+ }
