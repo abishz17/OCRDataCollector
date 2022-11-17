@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import axios from 'axios'
+import {React} from "react";
+
 
 const ImageField = (props) => {
     
@@ -7,12 +7,6 @@ const ImageField = (props) => {
     window.open("http://localhost:8000"+props.image,"_blank")
   }
 
-  useEffect(() => {
-    axios.get('http://127.0.0.1:8000/annotate/image/').then((response)=> {
-      props.setImage(response.data["image"])
-      props.setImageid(response.data["id"])
-    });
-  });
   return (
     <>
     <div className="box">
