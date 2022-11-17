@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Annotation from "./Annotation";
+import Annotation from "../pages/Annotation";
 
 function Tabs(props) {
   const [toggleState, setToggleState] = useState(1);

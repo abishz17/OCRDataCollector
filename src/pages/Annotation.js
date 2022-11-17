@@ -1,7 +1,8 @@
 import {React, useState,useEffect} from "react";
 import { Button } from "@mui/material";
-import ImageField from "./ImageField";
-import Textfield from "./Textfield";
+import ImageField from "../components/ImageField";
+import Textfield from "../components/Textfield";
+import "./Annotation.css";
 import axios from "axios";
 const Annotation = () => {
     const [text,setText]= useState("");
