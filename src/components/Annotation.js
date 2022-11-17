@@ -1,13 +1,12 @@
-import {React, useState} from "react";
+import {React, useState,useEffect} from "react";
 import { Button } from "@mui/material";
 import ImageField from "./ImageField";
 import Textfield from "./Textfield";
 import axios from "axios";
 const Annotation = () => {
     const [text,setText]= useState("");
-    const [image,setImage]=useState([]);
-    const [imageid,setImageid]=useState([]);
-    
+    const [image,setImage]=useState("");
+    const [imageid,setImageid]=useState("");
     const uploadHandler = () => {
         const formData = new FormData();
         formData.append("image",imageid);
@@ -20,15 +19,32 @@ const Annotation = () => {
         },
       })
       .then((res) => {
-        console.log(res);
+          
       });
+      
+      
   };
+
+  const getImage = () => { 
+    axios.get('http://127.0.0.1:8000/annotate/image/').then((response)=> {
+      setImage(response.data["image"])
+      setImageid(response.data["id"])
+      
+    });
+
+  }
+
+  useEffect(() => {
+    getImage();
+    
+  },[]);
+  
     
   return (
     <>
       <div className="main">
           <>
-          <ImageField image={image} setImage={setImage} setImageid={setImageid}/>
+          <ImageField image={image} />
             <div className="box">
               <Textfield setText={setText} text={text}/>
             </div>
