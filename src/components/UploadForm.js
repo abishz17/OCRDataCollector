@@ -44,53 +44,47 @@ const UploadForm = (props) => {
   };
   return (
     <>
-    <div className="box">
-      <input
-        style={{ display: "none" }}
-        type="file"
-        onChange={selectFile}
-        ref={fileRef}
-      ></input>
-      {icon && (
-        <div
-          className="image"
-          onClick={() => {
-            fileRef.current.click();
-          }}
-        >
-          <BsImage size="3em" />
-        </div>
-      )}
-      <div>
-        {!icon && (
-          <div>
-            <ImageModal src={src} alt={alt} />
+      <div className="box">
+        <input
+          style={{ display: "none" }}
+          type="file"
+          onChange={selectFile}
+          ref={fileRef}
+        ></input>
+        {icon && (
+          <div
+            className="image"
+            onClick={() => {
+              fileRef.current.click();
+            }}
+          >
+            <BsImage size="3em" />
           </div>
         )}
-
-        {!icon && (
-          <>
-            <AiFillDelete
-              className="delete-btn"
-              onClick={() => {
-                setIcon(true);
-              }}
-            />
-          </>
-        )}
+        <div>
+          {!icon && (
+            <div>
+              <AiFillDelete
+                className="delete-btn"
+                onClick={() => {
+                  setIcon(true);
+                }}
+              />
+              <ImageModal src={src} alt={alt} />
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-    {!icon && (
-          <Button
-            variant="outlined"
-            onClick={uploadHandler}
-            className="btn-submit"
-          >
-            Submit
-          </Button>
-        )}
+      {!icon && (
+        <Button
+          variant="outlined"
+          onClick={uploadHandler}
+          className="btn-submit"
+        >
+          Submit
+        </Button>
+      )}
     </>
-    
   );
 };
 
