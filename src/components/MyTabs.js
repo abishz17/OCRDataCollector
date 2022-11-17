@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Annotation from "./Annotation";
 
 function Tabs(props) {
   const [toggleState, setToggleState] = useState(1);
@@ -34,7 +35,7 @@ function Tabs(props) {
         <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
-          To be made.....
+          <Annotation />
         </div>
       </div>
     </div>

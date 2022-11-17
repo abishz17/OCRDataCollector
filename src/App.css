@@ -243,8 +243,9 @@ button:hover {
   text-align: center;
   background: #0b0c10;
   border-radius: 7px;
-  box-shadow: 0px 5px 15px rgb(220, 217, 217);
+  border-style: solid;
   transition: all 0.2s ease;
+  border-color: white;
 }
 
 .expand-icon {
@@ -262,3 +263,12 @@ button:hover {
   transform: translateY(-2px);
   color: #66fcf1;
 }
+.photo{
+  display: block;
+  margin: auto;
+
+  height: 10%;
+  width: 40%;
+
+}
+
