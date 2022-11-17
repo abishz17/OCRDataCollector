@@ -272,3 +272,9 @@ button:hover {
 
 }
 
+.textfield input{
+  height: 25%;
+}
+.imageSection img{
+  color: #ffffff;
+}

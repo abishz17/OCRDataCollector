@@ -1,17 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import axios from 'axios'
-const ImageField = () => {
-  const [image,setImage]=useState([])
+
+const ImageField = (props) => {
+    
+  const handleClick = () => {
+    window.open("http://localhost:8000"+props.image,"_blank")
+  }
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/annotate/image/3').then((response)=> {
-      setImage(response.data)
+    axios.get('http://127.0.0.1:8000/annotate/image/').then((response)=> {
+      props.setImage(response.data["image"])
+      props.setImageid(response.data["id"])
     });
-  },[]);
+  });
   return (
-    <div className="imageform">
-        <img className="photo" src={image} alt="this is img" height={"20px"}/>
+    <>
+    <div className="box">
+          <div className="imageSection">
+            <img src={props.image} alt={"Not available"} onClick={handleClick}/>
+          </div>
     </div>
+         
+
+    </>
   );
 };
 
