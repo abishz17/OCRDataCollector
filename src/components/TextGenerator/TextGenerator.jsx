@@ -65,7 +65,7 @@ const TextGenerator = (props) => {
           </div>
           <div />
           <div className="bg-gray-300 ml-auto mr-12 w-[30vw] flex-none items-center overflow-clip">
-            <UploadForm />
+            <UploadForm text={text} />
           </div>
         </div>
       )}

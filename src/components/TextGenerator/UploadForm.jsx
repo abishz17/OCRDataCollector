@@ -45,48 +45,46 @@ const UploadForm = (props) => {
   return (
     <>
       <div className="w-[30vw] h-full ml-12 flex-none ">
-        <div
-          className="h-full w-full "
-          onClick={() => {
-            fileRef.current.click();
-          }}
-        >
-          <input
-            style={{ display: "none" }}
-            type="file"
-            onChange={selectFile}
-            ref={fileRef}
-          ></input>
-          {icon && <ImageSearch className="center" />}
-        </div>
+        <input
+          style={{ display: "none" }}
+          type="file"
+          onChange={selectFile}
+          ref={fileRef}
+        ></input>
+        {icon && (
+          <ImageSearch
+            className="center"
+            onClick={() => {
+              fileRef.current.click();
+            }}
+          />
+        )}
+
         <div>
           {!icon && (
             <div className="self-center">
               <ImageModal src={src} alt={alt} />
             </div>
           )}
-
-          {!icon && (
-            <>
-              <Delete
-                className="delete-btn"
-                onClick={() => {
-                  setIcon(true);
-                }}
-              />
-            </>
-          )}
         </div>
+        {!icon && (
+          <>
+            <Delete
+              className="float-left mr-6"
+              onClick={() => {
+                setIcon(true);
+              }}
+            />
+            <Button
+              variant="contained"
+              onClick={uploadHandler}
+              className="cursor-pointer"
+            >
+              Submit
+            </Button>
+          </>
+        )}
       </div>
-      {!icon && (
-        <Button
-          variant="outlined"
-          onClick={uploadHandler}
-          className="btn-submit"
-        >
-          Submit
-        </Button>
-      )}
     </>
   );
 };

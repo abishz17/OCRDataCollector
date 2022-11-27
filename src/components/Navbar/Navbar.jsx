@@ -20,7 +20,7 @@ const Navbar = () => {
           <span className="px-2 mr-2  border-gray-800 mx-4 my-4 hover:text-[#38BDF8] active:text-gray-9 focus:outline-none focus:ring focus:ring-violet-300 ">
             <NavLink
               to="/"
-              className={({ isActive }) => (isActive ? "text-white" : "")}
+              className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
             >
               Home
             </NavLink>
@@ -28,7 +28,7 @@ const Navbar = () => {
           <span className="px-2 mr-2  border-gray-800 mx-4 my-4">
             <NavLink
               to="/data"
-              className={({ isActive }) => (isActive ? "text-white" : "")}
+              className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
             >
               Data
             </NavLink>
@@ -36,7 +36,7 @@ const Navbar = () => {
           <span className="px-2 mr-2  border-gray-800 mx-4 my-4 ">
             <NavLink
               to="/ocr"
-              className={({ isActive }) => (isActive ? "text-white" : "")}
+              className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
             >
               OCR
             </NavLink>
@@ -44,7 +44,7 @@ const Navbar = () => {
           <span className="px-2 mr-2  border-gray-800 mx-4 my-4">
             <NavLink
               to="/faq"
-              className={({ isActive }) => (isActive ? "text-white" : "")}
+              className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
             >
               FAQ
             </NavLink>
@@ -54,12 +54,12 @@ const Navbar = () => {
           <span className="self-center mx-3 underline decoration-dashed">
             <NavLink
               to="/privacy"
-              className={({ isActive }) => (isActive ? "text-white" : "")}
+              className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
             >
               Privacy Policy
             </NavLink>
           </span>
-          <button className="px-1 rounded h-8 self-center bg-gray-800 text-white mx-3 cursor-pointer overflow-clip relative">
+          <button className="px-1 rounded h-8 self-center bg-gray-800 text-white mx-3 cursor-pointer overflow-clip ">
             About Us
           </button>
         </div>

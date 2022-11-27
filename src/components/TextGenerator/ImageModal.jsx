@@ -61,7 +61,7 @@ export default function CustomizedDialogs(props) {
       <img
         className="center"
         src={props.src}
-        alt=""
+        alt="Not available"
         onClick={handleClickOpen}
       />
       <BootstrapDialog
