@@ -13,7 +13,7 @@ const Ninput = (props) => {
       <TextField
         type="number"
         className="ninput"
-        defaultValue="5"
+        placeholder="5"
         InputProps={{
           inputProps: {
             max: 15,
