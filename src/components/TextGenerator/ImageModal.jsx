@@ -59,9 +59,9 @@ export default function CustomizedDialogs(props) {
   return (
     <div>
       <img
-        className="preview"
+        className="center"
         src={props.src}
-        alt=""
+        alt="Not available"
         onClick={handleClickOpen}
       />
       <BootstrapDialog

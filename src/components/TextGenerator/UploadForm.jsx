@@ -1,14 +1,15 @@
 import React from "react";
 import { useState, useRef } from "react";
 import axios from "axios";
+import { ImageSearch } from "@mui/icons-material";
 
-import { BsImage } from "react-icons/bs";
-import { AiFillDelete } from "react-icons/ai";
 import { Button } from "@mui/material";
 import ImageModal from "./ImageModal";
+import { Delete } from "@mui/icons-material";
 const UploadForm = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [icon, setIcon] = useState(true);
+  const [isImageValid, setIsImageValid] = useState(false);
 
   const fileRef = useRef(null);
   const [{ alt, src }, setImg] = useState({
@@ -17,6 +18,7 @@ const UploadForm = (props) => {
   });
 
   const selectFile = (event) => {
+    const image = event.target.files[0];
     setSelectedFile(event.target.files[0]);
     setIcon(false);
     if (event.target.files[0]) {
@@ -24,6 +26,16 @@ const UploadForm = (props) => {
         src: URL.createObjectURL(event.target.files[0]),
         alt: event.target.files[0].name,
       });
+      console.log(image.name);
+    }
+    if (image && image.name.match(/\.(jpg|jpeg|png|gif)$/)) {
+      setIsImageValid(true);
+      setImg({
+        src: URL.createObjectURL(event.target.files[0]),
+        alt: event.target.files[0].name,
+      });
+    } else {
+      setIsImageValid(false);
     }
   };
   const uploadHandler = () => {
@@ -44,46 +56,52 @@ const UploadForm = (props) => {
   };
   return (
     <>
-      <div className="box">
+      <div className="w-[30vw] h-full ml-12 flex-none">
         <input
           style={{ display: "none" }}
           type="file"
           onChange={selectFile}
           ref={fileRef}
         ></input>
-        {icon && (
-          <div
-            className="image"
+        {!isImageValid && (
+          <ImageSearch
+            className="center"
             onClick={() => {
               fileRef.current.click();
             }}
-          >
-            <BsImage size="3em" />
+          />
+        )}
+
+        {!icon && (
+          <div className="self-center">
+            {!isImageValid ? (
+              <p className="text-red-800">Enter a valid image</p>
+            ) : (
+              <ImageModal src={src} alt={alt} />
+            )}
+            {}
           </div>
         )}
-        <div>
-          {!icon && (
-            <div>
-              <AiFillDelete
-                className="delete-btn"
-                onClick={() => {
-                  setIcon(true);
-                }}
-              />
-              <ImageModal src={src} alt={alt} />
-            </div>
-          )}
-        </div>
+
+        {!icon && isImageValid && (
+          <>
+            <Delete
+              className="float-left mr-6"
+              onClick={() => {
+                setIcon(true);
+                setIsImageValid(false);
+              }}
+            />
+            <Button
+              variant="contained"
+              onClick={uploadHandler}
+              className="cursor-pointer"
+            >
+              Submit
+            </Button>
+          </>
+        )}
       </div>
-      {!icon && (
-        <Button
-          variant="outlined"
-          onClick={uploadHandler}
-          className="btn-submit"
-        >
-          Submit
-        </Button>
-      )}
     </>
   );
 };

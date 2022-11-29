@@ -1,22 +1,18 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"); */
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-html,
-body,
-* {
-  box-sizing: border-box;
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
- body {
-   /* padding: 2rem; */
-   /* background: #134d68; */
-   /* background-image: url("../../black.png"); */
-   /* background-size: auto; */
-   background-color: #0b0c10;
-   /* background-repeat: no-repeat; */
- }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

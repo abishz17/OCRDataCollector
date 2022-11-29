@@ -42,7 +42,6 @@ const TextGenerator = (props) => {
       <div className="main">
         <div className="lines">
           <Ninput getNumber={getNumber} />
-          <div />
           <Button
             variant="outlined"
             className="btn-generate"
@@ -70,7 +69,7 @@ const TextGenerator = (props) => {
         )}
         {isShown && (
           <>
-            <UploadForm />
+            <UploadForm />           
           </>
         )}
       </div>
