@@ -42,7 +42,11 @@ export default function Model(props) {
               }}
             />
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography
+            id="modal-modal-description"
+            className="whitespace-pre-wrap overflow-scroll"
+            sx={{ mt: 2 }}
+          >
             {props.text}
           </Typography>
         </Box>

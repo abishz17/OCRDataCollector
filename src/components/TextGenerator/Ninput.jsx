@@ -6,20 +6,19 @@ const Ninput = (props) => {
     props.getNumber(event.target.value);
   };
   return (
-      <TextField
-        type="number"
-        className="mb-4"
-        defaultValue={5}
-        variant="filled"
-        InputProps={{
-          inputProps: {
-            max: 15,
-            min: 1,
-          },
-        }}
-        label="No.of Lines"
-        onChange={dropdownChangeHandler}
-      />
+    <TextField
+      type="number"
+      className="mb-4"
+      variant="filled"
+      InputProps={{
+        inputProps: {
+          max: 15,
+          min: 1,
+        },
+      }}
+      label="No.of Lines"
+      onChange={dropdownChangeHandler}
+    />
   );
 };
 

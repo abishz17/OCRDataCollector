@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import ImageField from "./ImageField";
 import Textfield from "./Textfield";
 import axios from "axios";
+
 const Annotation = () => {
   const [text, setText] = useState("");
   const [image, setImage] = useState("");
@@ -33,7 +34,7 @@ const Annotation = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-5 justify-center items-center h-[90vh]">
+    <div className="flex flex-col gap-4 justify-center items-center h-[90vh]">
       <div className="border-2 h-[23rem] border-slate-900">
         <ImageField image={image} className="center" />
       </div>

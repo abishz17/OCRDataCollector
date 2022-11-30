@@ -22,7 +22,7 @@ const TextGenerator = (props) => {
   };
 
   return (
-    <div className="grid">
+    <div>
       {!isShown && (
         <div className="justify-self-center flex flex-col gap-4 mt-10 mr-12">
           <Ninput getNumber={getNumber} />
@@ -34,11 +34,11 @@ const TextGenerator = (props) => {
             Generate
           </Button>
         </div>
-      )}{" "}
+      )}
       {isShown && (
-        <div className="flex flex-row ml-4 gap-5 mt-9 border-black border-3 ">
-          <div>
-            <div className="h-full flex-none text-black border-b-2 border-gray-900  overflow-auto">
+        <div className="flex flex-row justify-evenly gap-4 flex-wrap">
+          <div className="h-full">
+            <div className=" text-black border-b-2 border-gray-900  overflow-auto">
               <LineText text={text} />
             </div>
             {
@@ -63,8 +63,8 @@ const TextGenerator = (props) => {
               />
             </div>
           </div>
-          <div />
-          <div className="bg-gray-300 ml-auto mr-12 w-[30vw] flex-none items-center overflow-clip">
+
+          <div className=" bg-gray-300 flex-none overflow-clip">
             <UploadForm text={text} />
           </div>
         </div>

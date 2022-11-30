@@ -44,7 +44,7 @@ const UploadForm = (props) => {
   };
   return (
     <>
-      <div className="w-[30vw] h-full ml-12 flex-none ">
+      <div className="w-[50%] flex justify-center text-center">
         <input
           style={{ display: "none" }}
           type="file"
@@ -53,7 +53,7 @@ const UploadForm = (props) => {
         ></input>
         {icon && (
           <ImageSearch
-            className="center"
+            className=""
             onClick={() => {
               fileRef.current.click();
             }}
