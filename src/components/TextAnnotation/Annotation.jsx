@@ -7,7 +7,14 @@ const Annotation = () => {
   const [text, setText] = useState("");
   const [image, setImage] = useState("");
   const [imageid, setImageid] = useState("");
+  const [isTextValid, setIsTextValid] = useState(true);
   const uploadHandler = () => {
+    if (text.trim() === "") {
+      setIsTextValid(false);
+      console.log("enter valid text");
+      return;
+    }
+    setIsTextValid(true);
     const formData = new FormData();
     formData.append("image", imageid);
     formData.append("ocr_text", text);
@@ -48,6 +55,7 @@ const Annotation = () => {
       >
         Submit
       </Button>
+      {!isTextValid && <p className="text-red-900">Enter a valid text</p>}
     </div>
   );
 };

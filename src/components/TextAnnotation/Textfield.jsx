@@ -1,5 +1,6 @@
-import { React } from "react";
+import { React, useState } from "react";
 import { TextField } from "@mui/material";
+
 const Textfield = (props) => {
   const handleChange = (event) => {
     props.setText(event.target.value);
@@ -8,12 +9,13 @@ const Textfield = (props) => {
   return (
     <>
       <TextField
-        inputProps={{ style: { color: "white" } }}
+        inputProps={{ style: { color: "black" } }}
         fullWidth
         value={props.text}
         multiline
         rows={6}
         onChange={handleChange}
+        required
       />
     </>
   );
