@@ -57,11 +57,11 @@ export default function CustomizedDialogs(props) {
   };
 
   return (
-    <div className="overflow-cl">
+    <div>
       <img
-        className="mb-3 pt-4 "
+        className="preview"
         src={props.src}
-        alt="Not available"
+        alt=""
         onClick={handleClickOpen}
       />
       <BootstrapDialog

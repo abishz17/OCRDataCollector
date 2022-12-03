@@ -1,0 +1,280 @@
+.bt-1 {
+  margin-top: 7rem;
+}
+p {
+  white-space: pre-wrap;
+}
+.navdiv {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  height: 5rem;
+  background-color: #022c43;
+  margin: 0rem;
+}
+
+.navdiv nav {
+  height: 100%;
+}
+
+.navdiv ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.navdiv li {
+  margin: 0 1rem;
+  width: 3rem;
+}
+
+.navdiv a {
+  color: white;
+  text-decoration: none;
+}
+
+.navdiv a:hover,
+.navdiv a:active {
+  color: #95bcf0;
+  padding-bottom: 0.25rem;
+  border-bottom: 4px solid #95bcf0;
+}
+
+.ninput {
+  width: 10rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 99vw;
+  height: 100vh;
+  background: #020307;
+  margin: 0px auto 0;
+  word-break: break-all;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.bloc-tabs {
+  display: flex;
+}
+.tabs {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  color: #66fcf1;
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+  background: rgba(128, 128, 128, 0.075);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+}
+.tabs:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.active-tabs {
+  background: #020307;
+  border-bottom: 1px solid transparent;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 2px);
+  height: 5px;
+  background: #adefd1ff;
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  /* background-color: #0d2120; */
+  /* box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4); */
+  color: #fff;
+  transform: translateY(-5px);
+}
+.content-tabs {
+  flex-grow: 1;
+}
+.content {
+  background: #020307;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.content h2 {
+  padding: 0px 0 5px 0px;
+}
+.content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+.content p {
+  width: 100%;
+  height: 100%;
+}
+.active-content {
+  display: block;
+}
+
+.image-item {
+  background-color: #e0e9f5;
+}
+
+/* Hero */
+.main {
+  box-sizing: border-box;
+  display: block;
+  margin: auto;
+  position: relative;
+  /* align-items: center; */
+  width: 80%;
+  height: 85vh;
+
+  /* background: white; */
+  border: 1px solid #66fcf1;
+  border-radius: 10px;
+}
+
+.ninput {
+  margin: auto;
+  margin-right: 2%;
+  width: 20%;
+  background: white;
+
+
+}
+.lines {
+    display: block;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.image {
+  position: relative;
+  margin: auto;
+  margin-top: 5%;
+  cursor: pointer;
+  color: rgb(220, 217, 217);
+}
+
+.image:hover{
+  transform: translatey(-5px);
+    color: #66fcf1;
+}
+
+.btn-clear {
+  position: relative;
+  float: right;
+  right: -3%;
+  top: 2%
+}
+
+.btn-submit {
+  position: relative;
+  float: right;
+  right: 10%;
+  top: 1.5%
+}
+
+.btn-generate {
+  border: 2px solid #66fcf1;
+  font-size: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #c5c6c7;
+}
+
+.btn-generate:hover {
+  transform: none;
+}
+
+.delete-btn {
+  position: relative;
+  display: inline;
+  top:0.5rem;
+  float: right;
+  right: 1%;
+  cursor: pointer;
+  color: rgb(220, 217, 217);
+  font-size: 1.75rem;
+}
+
+.preview {
+  display: block;
+  margin: auto;
+
+  height: 10%;
+  width: 50%;
+  /* justify-content: baseline; */
+  border-radius: 20px;
+}
+
+.box {
+  display: block;
+  margin: auto;
+  box-sizing: border-box;
+
+  margin-top: 5%;
+  width: 80%;
+  overflow-y: auto;
+  text-align: center;
+  height: 25%;
+
+
+  text-align: center;
+  background: #0b0c10;
+  border-radius: 7px;
+  border-style: solid;
+  transition: all 0.2s ease;
+  border-color: white;
+}
+
+.expand-icon {
+  position: relative;
+  display: block;
+  color: white;
+  cursor: pointer;
+  float: right;
+  margin-right: 11%;
+  top:-20vh;
+  color: rgb(220, 217, 217);
+}
+
+.expand-icon:hover{
+  transform: translateY(-2px);
+  color: #66fcf1;
+}
+.photo{
+  display: block;
+  margin: auto;
+
+  height: 10%;
+  width: 40%;
+
+}
+
+.textfield input{
+  height: 25%;
+}
+.imageSection img{
+  color: #ffffff;
+}

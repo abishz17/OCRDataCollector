@@ -5,6 +5,7 @@ import Ninput from "./Ninput";
 import UploadForm from "./UploadForm";
 import { Button } from "@mui/material";
 import Modal from "./Modal";
+// import { padding } from "@mui/system";
 
 const TextGenerator = (props) => {
   const [isShown, setIsShown] = useState(false);
@@ -42,6 +43,7 @@ const TextGenerator = (props) => {
       <div className="main">
         <div className="lines">
           <Ninput getNumber={getNumber} />
+          <div/>
           <Button
             variant="outlined"
             className="btn-generate"
