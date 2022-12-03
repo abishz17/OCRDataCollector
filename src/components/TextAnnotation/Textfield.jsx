@@ -10,7 +10,8 @@ const Textfield = (props) => {
     <>
       <div className="">
         <TextField
-          inputProps={{ style: { color: "white" } }}
+          variant="outlined"
+          sx={{ border: "none", "& fieldset": { border: "none" } }}
           fullWidth
           value={props.text}
           multiline

@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import ImageField from "./ImageField";
 import Textfield from "./Textfield";
+import toHex from "../../utilities/tohex";
 
 import axios from "axios";
 const Annotation = () => {
@@ -9,13 +10,27 @@ const Annotation = () => {
   const [image, setImage] = useState("");
   const [imageid, setImageid] = useState("");
   const [isTextValid, setIsTextValid] = useState(true);
+  const [isNepaliText, setIsNepaliText] = useState(false);
+
+  const unicodeHandler = () => {
+    const hexNumber = text.charCodeAt(0).toString(16);
+    return parseInt(hexNumber, 16) >= 2304 && parseInt(hexNumber, 16) <= 2431; //devanagari script range
+  };
   const uploadHandler = () => {
     if (text.trim() === "") {
       setIsTextValid(false);
       console.log("enter valid text");
       return;
     }
+    if (!unicodeHandler) {
+      console.log("Devanagari script only allowed");
+      setIsNepaliText(false);
+      return;
+    }
+    console.log(parseInt(text.charCodeAt(0)), 16);
+
     setIsTextValid(true);
+    setIsNepaliText(true);
     const formData = new FormData();
     formData.append("image", imageid);
     formData.append("ocr_text", text);
@@ -58,6 +73,11 @@ const Annotation = () => {
           {!isTextValid && (
             <p className="text-red-900  mt-10 text-center">
               TextField cant be empty
+            </p>
+          )}
+          {isNepaliText && (
+            <p className="text-red-900  mt-10 text-center">
+              Only devanagari script is allowed
             </p>
           )}
         </>

@@ -14,10 +14,12 @@ const Navbar = () => {
   return (
     <div className="relative">
       <nav className="sticky top-0 flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
-        <div className="flex items-center">
-          <img src={Logo} alt="Logo" className="h-4" />
-          <span>NepaliOCR</span>
-        </div>
+        <NavLink to="/">
+          <div className="flex items-center">
+            <img src={Logo} alt="Logo" className="h-4" />
+            <span>NepaliOCR</span>
+          </div>
+        </NavLink>
         <ul className="font-montserrat items-center hidden md:flex">
           {Menus.map((menu, index) => (
             <li className="mx-3 ">
