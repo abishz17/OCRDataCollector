@@ -1,0 +1,18 @@
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+html,
+body,
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+
+}
+.Homepage {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    padding: 2%;
+    text-align: center;
+}
