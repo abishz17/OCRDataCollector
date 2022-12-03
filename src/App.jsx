@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import dic from "./assets/dictionary";
 import FeedBackForm from "./components/Feedback/FeedBackForm";
 import Videosample from "./components/Videosample/Videosample";
+import Error404 from "./pages/Error/Error404";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route exact path="/data/annotate" element={<Annotation />} />
         <Route exact path="/data/text" element={<TextGenerator data={dic} />} />
         <Route exact path="/sample" element={<Videosample />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
       <FeedBackForm />
       <Footer />
