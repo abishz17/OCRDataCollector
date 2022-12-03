@@ -5,7 +5,7 @@ const Data = () => {
   return (
     <div className="flex flex-col gap-6 content-center justify-center items-center h-[90vh]">
       <Link to={"/data/text"}>
-        <div className="md:w-[50rem] self-center md:h-[15.5rem] w-[20.5rem] h-[40rem] p-4 rounded-2xl border-t-2 bg-white shadow-lg flex flex-col ease-linear duration-300 md:flex-row-reverse">
+        <div className="md:w-[40rem] self-center md:h-[15.5rem] w-[20.5rem] h-[40rem] p-4 rounded-2xl border-t-2 bg-white shadow-lg flex flex-col ease-linear duration-300 md:flex-row-reverse">
           <div className=" h-full w-full  shadow-md rounded-xl basis-2/3 relative">
             <div className="h-full w-full relative border-2 text-center  border-slate-200 rounded-2xl text-slate-900">
               <img alt="Image Section" src="../images" />
@@ -20,15 +20,13 @@ const Data = () => {
               Minim reprehenderit cillum officia dolore sit dolore magna dolor
               eiusmod. Nulla anim quis est tempor nostrud eiusmod ipsum id
               incididunt nulla sit veniam elit fugiat. Anim commodo commodo anim
-              minim exercitation ad quis. Non anim consequat mollit laborum
-              laboris magna pariatur nisi officia culpa est velit. Velit
-              voluptate enim minim labore laboris.
+              minim exercitation ad quis.
             </p>
           </div>
         </div>
       </Link>
       <Link to={"/data/annotate"}>
-        <div className="md:w-[50rem] self-center md:h-[15.5rem] w-[20.5rem] h-[40rem] p-4 rounded-2xl border-t-2 bg-white shadow-lg flex flex-col ease-linear duration-300 md:flex-row-reverse">
+        <div className="md:w-[40rem] self-center md:h-[15.5rem] w-[20.5rem] h-[40rem] p-4 rounded-2xl border-t-2 bg-white shadow-lg flex flex-col ease-linear duration-300 md:flex-row-reverse">
           <div className=" h-full w-full  shadow-md rounded-2xl basis-2/3 relative">
             <div className="h-full w-full relative border-2 text-center  border-slate-200 rounded-2xl text-slate-900">
               <img alt="Image Section" src="../images" />
@@ -44,9 +42,7 @@ const Data = () => {
               Minim reprehenderit cillum officia dolore sit dolore magna dolor
               eiusmod. Nulla anim quis est tempor nostrud eiusmod ipsum id
               incididunt nulla sit veniam elit fugiat. Anim commodo commodo anim
-              minim exercitation ad quis. Non anim consequat mollit laborum
-              laboris magna pariatur nisi officia culpa est velit. Velit
-              voluptate enim minim labore laboris.
+              minim exercitation ad quis.
             </p>
           </div>
         </div>

@@ -31,7 +31,7 @@ const TextGenerator = (props) => {
   };
 
   return (
-    <div className="grid">
+    <div className="lg:ml-7">
       {!isShown && (
         <>
           <Ninput getNumber={getNumber} onSubmit={onSubmit} />
@@ -43,17 +43,18 @@ const TextGenerator = (props) => {
         </>
       )}
       {isShown && (
-        <LineText
-          text={text}
-          open={open}
-          setOpen={setOpen}
-          setIsShown={setIsShown}
-          setText={setText}
-        />
-      )}
-      {isShown && (
-        <div className="bg-gray-300 ml-auto mr-12 w-[30vw] h-full flex-none items-center overflow-clip">
-          <UploadForm text={text} />
+        <div className="flex flex-col lg:flex-row lg:mx-3">
+          <LineText
+            text={text}
+            open={open}
+            setOpen={setOpen}
+            setIsShown={setIsShown}
+            setText={setText}
+          />
+
+          <div className="basis-1/2 relative text-center lg:border-l-2 border-black">
+            <UploadForm text={text} />
+          </div>
         </div>
       )}
     </div>

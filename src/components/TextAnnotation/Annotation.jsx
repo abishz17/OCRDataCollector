@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import ImageField from "./ImageField";
 import Textfield from "./Textfield";
+
 import axios from "axios";
 const Annotation = () => {
   const [text, setText] = useState("");
@@ -30,7 +31,6 @@ const Annotation = () => {
 
   const getImage = () => {
     axios.get("http://127.0.0.1:8000/annotate/image/").then((response) => {
-      console.log(response);
       setImage(response.data["image"]);
       setImageid(response.data["id"]);
     });
@@ -41,22 +41,28 @@ const Annotation = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-5 justify-center items-center h-[90vh]">
-      <div className="border-2 h-[23rem] border-slate-900">
-        <ImageField image={image} className="center" />
+    <>
+      <div className="block m-auto relative w-[80%] h-[85vh] border-1 border-cyan-200">
+        <>
+          <ImageField image={image} />
+          <div className=" block m-auto mt-10 w-[80%] overflow-y-auto text-center h-[25%] bg-cyan-700 rounded-md border-white">
+            <Textfield setText={setText} text={text} />
+          </div>
+          <Button
+            variant="outlined"
+            onClick={uploadHandler}
+            className="relative float-right right-10  top-5"
+          >
+            Submit
+          </Button>
+          {!isTextValid && (
+            <p className="text-red-900  mt-10 text-center">
+              TextField cant be empty
+            </p>
+          )}
+        </>
       </div>
-      <div className="border-2 border-slate-900">
-        <Textfield setText={setText} text={text} />
-      </div>
-      <Button
-        variant="outlined"
-        onClick={uploadHandler}
-        className="relative w-8 self-center"
-      >
-        Submit
-      </Button>
-      {!isTextValid && <p className="text-red-900">Enter a valid text</p>}
-    </div>
+    </>
   );
 };
 

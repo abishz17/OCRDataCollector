@@ -19,9 +19,9 @@ const LineText = (props) => {
   // }, []);
 
   return (
-    <div className="flex flex-row ml-4 gap-5 mt-9 border-black border-3 ">
-      <div>
-        <div className="h-full flex-none text-black border-b-2 border-gray-900  overflow-auto">
+    <div className="basis-1/2 flex flex-row ml-auto gap-5 mt-9 border-black border-3 ">
+      <div className="h-full">
+        <div className="flex-none text-black border-b-2 border-gray-900  overflow-auto">
           <p className="py-2 my-2 whitespace-pre-wrap">{lines} </p>
         </div>
         {

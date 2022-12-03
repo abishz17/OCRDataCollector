@@ -8,15 +8,16 @@ const Textfield = (props) => {
 
   return (
     <>
-      <TextField
-        inputProps={{ style: { color: "black" } }}
-        fullWidth
-        value={props.text}
-        multiline
-        rows={6}
-        onChange={handleChange}
-        required
-      />
+      <div className="">
+        <TextField
+          inputProps={{ style: { color: "white" } }}
+          fullWidth
+          value={props.text}
+          multiline
+          rows={6}
+          onChange={handleChange}
+        />
+      </div>
     </>
   );
 };

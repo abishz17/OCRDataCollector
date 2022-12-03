@@ -55,54 +55,55 @@ const UploadForm = (props) => {
       });
   };
   return (
-    <>
-      <div className="w-[30vw] h-full ml-12 flex-none">
-        <input
-          style={{ display: "none" }}
-          type="file"
-          onChange={selectFile}
-          ref={fileRef}
-        ></input>
-        {!isImageValid && (
+    <div className="lg:ml-4 gap-5 lg:mt-9 border-black border-3 text-slate-900">
+      <input
+        style={{ display: "none" }}
+        type="file"
+        accept="image/*"
+        onChange={selectFile}
+        ref={fileRef}
+      ></input>
+      {!isImageValid && (
+        <div className="lg:mt-[25%] mt-3 text-cyan-900 cursor-pointer border-dashed border-2 border-black">
           <ImageSearch
-            className="center"
             onClick={() => {
               fileRef.current.click();
             }}
           />
-        )}
+          <span>Upload a file</span>
+        </div>
+      )}
 
-        {!icon && (
-          <div className="self-center">
-            {!isImageValid ? (
-              <p className="text-red-800">Enter a valid image</p>
-            ) : (
-              <ImageModal src={src} alt={alt} />
-            )}
-            {}
-          </div>
-        )}
+      {!icon && (
+        <div className="">
+          {!isImageValid ? (
+            <p className="text-red-800">Enter a valid image</p>
+          ) : (
+            <ImageModal src={src} alt={alt} />
+          )}
+          {}
+        </div>
+      )}
 
-        {!icon && isImageValid && (
-          <>
-            <Delete
-              className="float-left mr-6"
-              onClick={() => {
-                setIcon(true);
-                setIsImageValid(false);
-              }}
-            />
-            <Button
-              variant="contained"
-              onClick={uploadHandler}
-              className="cursor-pointer"
-            >
-              Submit
-            </Button>
-          </>
-        )}
-      </div>
-    </>
+      {!icon && isImageValid && (
+        <div className="flex flex-row lg:absolute lg:-bottom-3 ">
+          <Delete
+            className="float-left mr-6"
+            onClick={() => {
+              setIcon(true);
+              setIsImageValid(false);
+            }}
+          />
+          <Button
+            variant="contained"
+            onClick={uploadHandler}
+            className="cursor-pointer"
+          >
+            Submit
+          </Button>
+        </div>
+      )}
+    </div>
   );
 };
 
