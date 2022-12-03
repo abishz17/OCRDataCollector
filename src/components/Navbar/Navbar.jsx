@@ -12,7 +12,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="sticky top-0 backdrop-blur-2xl">
+    <div className=" sticky top-0 backdrop-filter backdrop-blur-lg ">
       <nav className="flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
         <NavLink to="/">
           <div className="flex items-center">

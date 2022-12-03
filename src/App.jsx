@@ -7,7 +7,7 @@ import Annotation from "./components/TextAnnotation/Annotation";
 import TextGenerator from "./components/TextGenerator/TextGenerator";
 import { Routes, Route } from "react-router-dom";
 import dic from "./assets/dictionary";
-import Videosample from "./pages/Home/Videosample";
+import Videosample from "./components/Videosample/Videosample";
 
 const App = () => {
   return (
