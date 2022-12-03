@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Image from "../../assets/image.png";
-import FeedBackForm from "../../components/Feedback/FeedBackForm";
+
 const Home = () => {
   return (
     <section className="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
@@ -29,7 +29,6 @@ const Home = () => {
       <div className="flex justify-around md:block mt-8 md:mt-0 md:flex-1">
         <img src={Image} alt="handwriting" />
       </div>
-      <FeedBackForm />
     </section>
   );
 };

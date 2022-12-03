@@ -12,8 +12,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div className=" sticky top-0 backdrop-filter backdrop-blur-lg ">
-      <nav className="flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
+    <div className=" sticky top-0 ">
+      <nav className="flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center backdrop-filter backdrop-blur-lg z-10">
         <NavLink to="/">
           <div className="flex items-center">
             <img src={Logo} alt="Logo" className="h-4" />
@@ -53,7 +53,7 @@ const Navbar = () => {
       {isOpen && (
         <div
           id="mobileNav"
-          className="px-4 py-6 fixed top-0 left-0 h-full w-full bg-cyan-200 z-20 animate-fade-in-down"
+          className="px-4 py-6 fixed top-0 left-0 h-full w-full bg-cyan-200  animate-fade-in-down"
         >
           <div id="hideMenu" className="flex justify-end">
             <CrossIcon

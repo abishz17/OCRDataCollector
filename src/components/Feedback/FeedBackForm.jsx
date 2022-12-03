@@ -21,7 +21,7 @@ export default function FeedBackForm() {
   };
 
   return (
-    <div className="">
+    <div className="fixed bottom-5 right-5 z-2">
       <Tooltip title="Give us your feedback">
         <IconButton
           onClick={() => {

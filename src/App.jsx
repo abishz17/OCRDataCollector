@@ -7,6 +7,7 @@ import Annotation from "./components/TextAnnotation/Annotation";
 import TextGenerator from "./components/TextGenerator/TextGenerator";
 import { Routes, Route } from "react-router-dom";
 import dic from "./assets/dictionary";
+import FeedBackForm from "./components/Feedback/FeedBackForm";
 import Videosample from "./components/Videosample/Videosample";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route exact path="/data/text" element={<TextGenerator data={dic} />} />
         <Route exact path="/sample" element={<Videosample />} />
       </Routes>
+      <FeedBackForm />
       <Footer />
     </div>
   );
