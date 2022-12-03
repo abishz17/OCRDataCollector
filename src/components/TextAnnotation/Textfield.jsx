@@ -1,5 +1,26 @@
 import { React, useState } from "react";
 import { TextField } from "@mui/material";
+import { styled } from "@mui/material/styles";
+
+const CssTextField = styled(TextField)({
+  "& label.Mui-focused": {
+    color: "none",
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: "none",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "none",
+    },
+    "&:hover fieldset": {
+      borderColor: "gray",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "none",
+    },
+  },
+});
 
 const Textfield = (props) => {
   const handleChange = (event) => {
@@ -8,10 +29,15 @@ const Textfield = (props) => {
 
   return (
     <>
-      <div className="">
+      <div className="bg-gray-100 ">
         <TextField
-          variant="outlined"
-          sx={{ border: "none", "& fieldset": { border: "none" } }}
+          variant="standard"
+          label="Enter Text"
+          helperText="Please enter text in Nepali"
+          InputProps={{
+            disableUnderline: true, // <== added this
+          }}
+          id="custom-css-textfield"
           fullWidth
           value={props.text}
           multiline

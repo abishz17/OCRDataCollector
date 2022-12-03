@@ -60,26 +60,14 @@ const Annotation = () => {
       <div className="block m-auto relative w-[80%] h-[85vh] border-1 border-cyan-200">
         <>
           <ImageField image={image} />
-          <div className=" block m-auto mt-10 w-[80%] overflow-y-auto text-center h-[25%] bg-cyan-700 rounded-md border-white">
+          <div className=" block m-auto mt-10 w-[80%] overflow-y-auto text-center h-[30%] rounded-md border-white">
             <Textfield setText={setText} text={text} />
           </div>
-          <Button
-            variant="outlined"
-            onClick={uploadHandler}
-            className="relative float-right right-10  top-5"
-          >
-            Submit
-          </Button>
-          {!isTextValid && (
-            <p className="text-red-900  mt-10 text-center">
-              TextField cant be empty
-            </p>
-          )}
-          {isNepaliText && (
-            <p className="text-red-900  mt-10 text-center">
-              Only devanagari script is allowed
-            </p>
-          )}
+          <center>
+            <Button variant="contained" onClick={uploadHandler}>
+              Submit
+            </Button>
+          </center>
         </>
       </div>
     </>
