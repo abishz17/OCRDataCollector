@@ -38,16 +38,17 @@ const Annotation = () => {
       <div className="block m-auto relative w-[80%] h-[85vh] border-1 border-cyan-200">
         <>
           <ImageField image={image} />
-          <div className=" block m-auto mt-10 w-[80%] overflow-y-auto text-center h-[25%] bg-cyan-700 rounded-md border-white">
+          <div className=" block m-auto mt-10 w-[80%] overflow-y-auto text-center h-[30%] rounded-md border-white">
             <Textfield setText={setText} text={text} />
           </div>
+          <center>
           <Button
-            variant="outlined"
+            variant="contained"
             onClick={uploadHandler}
-            className="relative float-right right-10  top-5"
           >
             Submit
           </Button>
+          </center>
         </>
       </div>
     </>

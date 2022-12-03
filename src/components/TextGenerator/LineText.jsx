@@ -19,8 +19,8 @@ const LineText = (props) => {
   // }, []);
 
   return (
-    <div className="basis-1/2 flex flex-row ml-auto gap-5 mt-9 border-black border-3 ">
-      <div className="h-full">
+    <div className="basis-1/2 flex justify-center items-center gap-5 mt-9 border-black border-3 ">
+      <div className="h-full w-5/6 m-auto ">
         <div className="flex-none text-black border-b-2 border-gray-900  overflow-auto">
           <p className="py-2 my-2 whitespace-pre-wrap">{lines} </p>
         </div>
@@ -32,14 +32,14 @@ const LineText = (props) => {
             setOpen={props.setOpen}
           />
         }
-        <div className="flex flex-row text-black ">
+        <div className="flex flex-row text-black hover:cursor-pointer ">
           <OpenInFull
             onClick={(e) => {
               props.setOpen(true);
             }}
           />
           <Clear
-            className="text-black ml-auto"
+            className="text-black ml-auto hover:cursor-pointer"
             onClick={(e) => {
               props.setIsShown(false);
             }}

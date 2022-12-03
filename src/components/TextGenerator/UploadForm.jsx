@@ -64,12 +64,16 @@ const UploadForm = (props) => {
         ref={fileRef}
       ></input>
       {!isImageValid && (
-        <div className="lg:mt-[25%] mt-3 text-cyan-900 cursor-pointer border-dashed border-2 border-black">
-          <ImageSearch
-            onClick={() => {
-              fileRef.current.click();
-            }}
-          />
+        // <div className="lg:mt-[25%] mt-3 text-cyan-900 cursor-pointer border-dashed border-2 border-black">
+        <div
+          className="lg:absolute flex justify-center items-center 
+                      w-11/12 h-5/6 text-cyan-900 cursor-pointer 
+                      border-dashed border-2 border-black"
+          onClick={() => {
+            fileRef.current.click();
+          }}
+        >
+          <ImageSearch />
           <span>Upload a file</span>
         </div>
       )}
@@ -86,9 +90,10 @@ const UploadForm = (props) => {
       )}
 
       {!icon && isImageValid && (
-        <div className="flex flex-row lg:absolute lg:-bottom-3 ">
+        <div className="flex-row lg:absolute inline-flex">
           <Delete
-            className="float-left mr-6"
+            fontSize="large"
+            className="float-left mr-6 hover:cursor-pointer"
             onClick={() => {
               setIcon(true);
               setIsImageValid(false);
