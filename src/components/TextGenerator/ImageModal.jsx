@@ -57,9 +57,9 @@ export default function CustomizedDialogs(props) {
   };
 
   return (
-    <div>
+    <div className="overflow-cl">
       <img
-        className="center"
+        className="mb-3 pt-4 "
         src={props.src}
         alt="Not available"
         onClick={handleClickOpen}

@@ -6,65 +6,53 @@ import UploadForm from "./UploadForm";
 import { Button } from "@mui/material";
 import Model from "./Modal";
 import { makeASentence } from "../../utilities/makeSentence";
-import { Clear, Expand, OpenInFull } from "@mui/icons-material";
+
+import { useEffect } from "react";
 const TextGenerator = (props) => {
   const [isShown, setIsShown] = useState(false);
-  const [number, setNumber] = useState(10);
+  const [number, setNumber] = useState(5);
   const [text, setText] = useState("");
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [isNumberValid, setIsNumberValid] = useState(true);
 
   const getNumber = (selectedNumber) => {
     setNumber(selectedNumber);
   };
   const onSubmit = () => {
+    if (number === "0" || number === "") {
+      setIsNumberValid(false);
+      console.log("Invalid");
+      return;
+    }
+    setIsNumberValid(true);
+    console.log(number);
     setIsShown(true);
     setText(makeASentence(props.data, number));
   };
 
   return (
-    <div>
+    <div className="lg:ml-7">
       {!isShown && (
-        <div className="justify-self-center flex flex-col gap-4 mt-10 mr-12">
-          <Ninput getNumber={getNumber} />
-          <Button
-            variant="outlined"
-            className="w-auto self-center my-3"
-            onClick={onSubmit}
-          >
-            Generate
-          </Button>
-        </div>
+        <>
+          <Ninput getNumber={getNumber} onSubmit={onSubmit} />
+          {!isNumberValid && (
+            <p className="text-red-800 text-center mt-10">
+              This field cant be 0 or empty.
+            </p>
+          )}
+        </>
       )}
       {isShown && (
-        <div className="flex flex-row justify-evenly gap-4 flex-wrap">
-          <div className="h-full">
-            <div className=" text-black border-b-2 border-gray-900  overflow-auto">
-              <LineText text={text} />
-            </div>
-            {
-              <Model
-                className="expand"
-                text={text}
-                open={open}
-                setOpen={setOpen}
-              />
-            }
-            <div className="flex flex-row text-black ">
-              <OpenInFull
-                onClick={(e) => {
-                  setOpen(true);
-                }}
-              />
-              <Clear
-                className="text-black ml-auto"
-                onClick={(e) => {
-                  setIsShown(false);
-                }}
-              />
-            </div>
-          </div>
+        <div className="flex flex-col lg:flex-row lg:mx-3">
+          <LineText
+            text={text}
+            open={open}
+            setOpen={setOpen}
+            setIsShown={setIsShown}
+            setText={setText}
+          />
 
-          <div className=" bg-gray-300 flex-none overflow-clip">
+          <div className="basis-1/2 relative text-center lg:border-l-2 border-black">
             <UploadForm text={text} />
           </div>
         </div>
