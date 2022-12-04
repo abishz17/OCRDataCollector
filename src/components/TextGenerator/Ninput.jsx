@@ -3,23 +3,24 @@ import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 
 const Ninput = (props) => {
-  const dropdownChangeHandler = (event) => {
-    props.getNumber(event.target.value);
+  const max = 15;
+  const min = 1;
+  const dropdownChangeHandler = (e) => {
+    var value = parseInt(e.target.value, 10);
+
+    if (value > max) value = max;
+    if (value < min) value = min;
+
+    props.getNumber(value);
   };
 
   return (
-    <div className="justify-self-center flex flex-col gap-4 mt-10 mr-12">
+    <div className="justify-self-center flex flex-col gap-4 mt-10 ">
       <TextField
         type="number"
-        className="mb-4"
+        className="mb-4 w-[30%] self-center"
         defaultValue={5}
         variant="filled"
-        InputProps={{
-          inputProps: {
-            max: 15,
-            min: 1,
-          },
-        }}
         label="No.of Lines"
         onChange={dropdownChangeHandler}
       />

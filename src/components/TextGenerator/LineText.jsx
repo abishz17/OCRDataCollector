@@ -1,6 +1,7 @@
 import Model from "./Modal";
 import { Clear, Expand, OpenInFull } from "@mui/icons-material";
 import { useEffect } from "react";
+import { Tooltip } from "@mui/material";
 const LineText = (props) => {
   const lines = props.text;
 
@@ -33,17 +34,22 @@ const LineText = (props) => {
           />
         }
         <div className="flex flex-row text-black hover:cursor-pointer ">
-          <OpenInFull
-            onClick={(e) => {
-              props.setOpen(true);
-            }}
-          />
-          <Clear
-            className="text-black ml-auto hover:cursor-pointer"
-            onClick={(e) => {
-              props.setIsShown(false);
-            }}
-          />
+          <Tooltip title="Expand">
+            <OpenInFull
+              title="Expand"
+              onClick={(e) => {
+                props.setOpen(true);
+              }}
+            />
+          </Tooltip>
+          <Tooltip title="Clear text">
+            <Clear
+              className="text-black ml-auto hover:cursor-pointer"
+              onClick={(e) => {
+                props.setIsShown(false);
+              }}
+            />
+          </Tooltip>
         </div>
       </div>
       <div />
