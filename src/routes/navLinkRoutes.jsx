@@ -14,5 +14,14 @@ export const navLinkRoutes = [
         path:"/ocr",
         name:"OCR",
     },
-   
+    {
+        index:4,
+        path:"/privacy",
+        name:"Privacy",
+    },
+    {
+        index: 5,
+        path:"/about",
+        name:"About",
+    },
 ]
