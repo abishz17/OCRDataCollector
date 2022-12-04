@@ -1,6 +1,6 @@
-import { React } from "react";
+import { React, useState } from "react";
 import { TextField } from "@mui/material";
-import { styled } from '@mui/material/styles';
+import { styled } from "@mui/material/styles";
 
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
@@ -27,25 +27,25 @@ const Textfield = (props) => {
     props.setText(event.target.value);
   };
 
- return (
-   <>
-     <div className="bg-gray-100 ">
-       <TextField
-         variant="standard"
-         label="Enter Text"
-         helperText="Please enter text in Nepali"
+  return (
+    <>
+      <div className="bg-gray-100 ">
+        <TextField
+          variant="standard"
+          label="Enter Text"
+          helperText="Please enter text in Nepali"
           InputProps={{
             disableUnderline: true, // <== added this
           }}
-         id="custom-css-textfield"
-         fullWidth
-         value={props.text}
-         multiline
-         rows={6}
-         onChange={handleChange}
-       />
-     </div>
-   </>
- );
+          id="custom-css-textfield"
+          fullWidth
+          value={props.text}
+          multiline
+          rows={6}
+          onChange={handleChange}
+        />
+      </div>
+    </>
+  );
 };
 export default Textfield;

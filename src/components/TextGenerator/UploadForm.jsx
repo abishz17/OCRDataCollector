@@ -53,6 +53,7 @@ const UploadForm = (props) => {
       .then((res) => {
         console.log(res);
       });
+    alert("THanks for submitting");
   };
   return (
     <div className="lg:ml-4 gap-5 lg:mt-9 border-black border-3 text-slate-900">

@@ -69,7 +69,7 @@ const TextGenerator = (props) => {
         )}
         {isShown && (
           <>
-            <UploadForm />           
+            <UploadForm />
           </>
         )}
       </div>
