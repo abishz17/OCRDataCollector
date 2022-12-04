@@ -5,12 +5,14 @@ import Textfield from "./Textfield";
 import toHex from "../../utilities/tohex";
 
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Annotation = () => {
   const [text, setText] = useState("");
   const [image, setImage] = useState("");
   const [imageid, setImageid] = useState("");
   const [isTextValid, setIsTextValid] = useState(true);
   const [isNepaliText, setIsNepaliText] = useState(false);
+  const navigate = useNavigate();
 
   const unicodeHandler = () => {
     const hexNumber = text.charCodeAt(0).toString(16);
@@ -43,8 +45,11 @@ const Annotation = () => {
       })
       .then((res) => {
         console.log("Successfully annotated");
+        alert("Thanks for the submission.");
+        navigate(-1);
       })
       .catch((e) => {
+        alert("Server error.Try again");
         console.log(e);
       });
   };
