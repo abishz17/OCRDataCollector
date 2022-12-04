@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProfileCard from "/src/components/About/ProfileCard"
+import Profiles from "/src/components/About/Profiles";
+
 const About = () => {
     return (
       <>
-        <div className="flex flex-col gap-6 content-center justify-center items-center">
-            <ProfileCard />
+        <div className="flex pb-10 justify-center items-center">
+          This project is a major project.
+        </div>
+        <div className="flex gap-6 justify-center items-center">
+          <Profiles />
         </div>
       </>
     );

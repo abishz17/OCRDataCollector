@@ -5,11 +5,10 @@ import { members } from "/src/pages/About/Members";
 
 const Profiles = () => {
     return (
-        <div>
-            {/* {members.map(({image, alt, name, height}, idx) => {
-            return(<ProfileCard  />);
-            })} */}
-            <ProfileCard />
+        <div className="inline-flex col-span-10 gap-x-10">
+            {members.map((item, idx) => {
+            return(<ProfileCard key={idx} item={item} />)
+            })}
         </div>
     );
 }
