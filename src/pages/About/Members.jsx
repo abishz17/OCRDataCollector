@@ -6,7 +6,7 @@ export const members = [
     image: avatar,
     alt: avatar,
     name: "Abish Bhusal",
-    height: 80,
+    height: 60,
     fb: "https://www.facebook.com/abish.125sac",
     insta: "#",
     linkedin: "https://www.linkedin.com/in/abish-bhusal-950930258",
