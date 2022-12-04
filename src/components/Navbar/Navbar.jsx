@@ -33,12 +33,7 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="font-montserrat hidden md:block">
-          <NavLink
-            className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
-            to="/privacy"
-          >
-            <button className="mr-6">Privacy</button>
-          </NavLink>
+          <button className="mr-6">Privacy</button>
           <NavLink
             className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
             to="/about"

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Image from "../../assets/type.png";
+import Logo from "../../assets/logo_pen.png";
 
 const Data = () => {
   return (
@@ -9,7 +11,7 @@ const Data = () => {
           <div className="md:w-[40rem] self-center md:h-[15.5rem] w-[20.5rem] h-[40rem] p-4 rounded-2xl border-t-2 bg-white shadow-lg flex flex-col ease-linear duration-300 md:flex-row-reverse">
             <div className=" h-full w-full  shadow-md rounded-xl basis-2/3 relative">
               <div className="h-full w-full relative border-2 text-center  border-slate-200 rounded-2xl text-slate-900">
-                <img alt="Image Section" src="../images" />
+                <img alt="Image Section" src={Logo} />
               </div>
             </div>
 
@@ -18,10 +20,9 @@ const Data = () => {
                 Help us by writing Nepali text into a paper.
               </h1>
               <p className="m-2 text-md font-medium">
-                Minim reprehenderit cillum officia dolore sit dolore magna dolor
-                eiusmod. Nulla anim quis est tempor nostrud eiusmod ipsum id
-                incididunt nulla sit veniam elit fugiat. Anim commodo commodo
-                anim minim exercitation ad quis.
+                Help us build a dataset to train our OCR model. Write into a
+                paper several lines of randomly generated text from the next
+                section and upload it. Thanks for your cooperation.
               </p>
             </div>
           </div>
@@ -30,7 +31,7 @@ const Data = () => {
           <div className="md:w-[40rem] self-center md:h-[15.5rem] w-[20.5rem] h-[40rem] p-4 rounded-2xl border-t-2 bg-white shadow-lg flex flex-col ease-linear duration-300 md:flex-row-reverse">
             <div className=" h-full w-full  shadow-md rounded-2xl basis-2/3 relative">
               <div className="h-full w-full relative border-2 text-center  border-slate-200 rounded-2xl text-slate-900">
-                <img alt="Image Section" src="../images" />
+                <img alt="Image Section" src={Image} />
               </div>
             </div>
 
@@ -40,10 +41,9 @@ const Data = () => {
                 text.
               </h1>
               <p className="m-2 text-md font-medium">
-                Minim reprehenderit cillum officia dolore sit dolore magna dolor
-                eiusmod. Nulla anim quis est tempor nostrud eiusmod ipsum id
-                incididunt nulla sit veniam elit fugiat. Anim commodo commodo
-                anim minim exercitation ad quis.
+                In this section , you can help us by annotating already written
+                Nepali characters. Label each word in the image by typing out in
+                the textfield.
               </p>
             </div>
           </div>

@@ -4,9 +4,9 @@ import Profiles from "/src/components/About/Profiles";
 
 const About = () => {
     return (
-      <>
-        <div class="py-6 dark:bg-gray-800 dark:text-gray-100">
-          <div class="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
+      <div class="mb-32 text-gray-800 text-center w-auto">
+        <div className="pt-12 md:mt-0 flex flex-col justify-center text-center md:text-left 
+        md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -15,14 +15,14 @@ const About = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </div>
-        <p class="p-2 text-sm font-medium tracking-wider text-center uppercase">
-          Development team
-        </p>
-        <div className="flex gap-6 justify-center items-center">
+        <h2 class="text-3xl font-bold mb-32 mt-10">
+          Meet the <span class="text-blue-600">Team</span>
+        </h2>
+
+        <div class="flex justify-center items-center gap-x-6 lg:gap-x-12 md:grid-cols-3">
           <Profiles />
         </div>
       </div>
-      </>
     );
 }
 

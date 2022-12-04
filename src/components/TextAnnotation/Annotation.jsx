@@ -41,7 +41,12 @@ const Annotation = () => {
           "Content-Type": "multipart/form-data",
         },
       })
-      .then((res) => {});
+      .then((res) => {
+        console.log("Successfully annotated");
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   const getImage = () => {

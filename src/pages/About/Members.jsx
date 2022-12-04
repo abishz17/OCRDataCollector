@@ -1,9 +1,10 @@
 import avatar from '/src/assets/avatar.png';
 import gopal from '/src/assets/gopal.png'
+import abish from "/src/assets/abish.png";
 
 export const members = [
   {
-    image: avatar,
+    image: abish,
     alt: avatar,
     name: "Abish Bhusal",
     height: 80,
