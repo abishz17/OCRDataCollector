@@ -6,11 +6,12 @@ import { ImageSearch } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import ImageModal from "./ImageModal";
 import { Delete } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 const UploadForm = (props) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [icon, setIcon] = useState(true);
   const [isImageValid, setIsImageValid] = useState(false);
-
+  const navigate = useNavigate();
   const fileRef = useRef(null);
   const [{ alt, src }, setImg] = useState({
     src: null,
@@ -52,8 +53,12 @@ const UploadForm = (props) => {
       })
       .then((res) => {
         console.log(res);
+        alert("Thanks for submitting!");
+        navigate(-1);
+      })
+      .catch((err) => {
+        alert("Submission failed.Server error");
       });
-    alert("THanks for submitting");
   };
   return (
     <div className="lg:ml-4 gap-5 lg:mt-9 border-black border-3 text-slate-900">

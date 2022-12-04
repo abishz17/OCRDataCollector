@@ -37,7 +37,6 @@ const Textfield = (props) => {
           InputProps={{
             disableUnderline: true, // <== added this
           }}
-          id="custom-css-textfield"
           fullWidth
           value={props.text}
           multiline
