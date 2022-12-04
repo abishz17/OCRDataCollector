@@ -19,7 +19,7 @@ const About = () => {
           Meet the <span class="text-blue-600">Team</span>
         </h2>
 
-        <div class="flex justify-center items-center gap-x-6 lg:gap-x-12 md:grid-cols-3">
+        <div class="gap-x-6 lg:gap-x-12 md:grid-cols-3">
           <Profiles />
         </div>
       </div>
