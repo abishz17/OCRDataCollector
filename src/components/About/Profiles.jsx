@@ -1,15 +1,15 @@
 import React from "react"
 
-import ProfileCard from "/src/components/About/ProfileCard";
+import EachCard from "/src/components/About/EachProfile";
 import { members } from "/src/pages/About/Members";
 
 const Profiles = () => {
     return (
-        <div className="inline-flex col-span-10 gap-x-10">
-            {members.map((item, idx) => {
-            return(<ProfileCard key={idx} item={item} />)
-            })}
-        </div>
+      <div className="flex justify-center items-center">
+        {members.map((item, idx) => {
+          return <EachCard key={idx} item={item} />;
+        })}
+      </div>
     );
 }
 

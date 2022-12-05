@@ -1,9 +1,10 @@
 import avatar from '/src/assets/avatar.png';
 import gopal from '/src/assets/gopal.png'
+import abish from "/src/assets/abish.png";
 
 export const members = [
   {
-    image: avatar,
+    image: abish,
     alt: avatar,
     name: "Abish Bhusal",
     height: 80,
@@ -11,6 +12,7 @@ export const members = [
     insta: "#",
     linkedin: "https://www.linkedin.com/in/abish-bhusal-950930258",
     github: "https://github.com/abishz17",
+    email: "075bct008.abish@pcampus.edu.np",
   },
   {
     image: avatar,
@@ -21,6 +23,7 @@ export const members = [
     insta: "https://www.instagram.com/goal_chhetri/",
     linkedin: "https://www.linkedin.com/in/gopal-baidawar-chhetri-00a35820b/",
     github: "https://github.com/Gopal-Kshetri",
+    email: "075bct039.abish@pcampus.edu.np",
   },
   {
     image: avatar,
@@ -31,6 +34,7 @@ export const members = [
     insta: "https://www.instagram.com/kbhattarai37/",
     linkedin: "https://www.linkedin.com/in/kiran-bhattarai-9a6022179/",
     github: "https://github.com/kiri0424",
+    email: "075bct042.abish@pcampus.edu.np",
   },
   {
     image: avatar,
@@ -41,5 +45,6 @@ export const members = [
     insta: "#",
     linkedin: "www.linkedin.com/in/manjeet-pandey-np",
     github: "https://github.com/Manjeet-pandey",
+    email: "075bct048.abish@pcampus.edu.np",
   },
 ];
