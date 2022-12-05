@@ -13,6 +13,7 @@ import dic from "./assets/dictionary";
 import FeedBackForm from "./components/Feedback/FeedBackForm";
 import Videosample from "./components/Videosample/Videosample";
 import Error404 from "./pages/Error/Error404";
+import ComingSoon from "./pages/Error/ComingSoon";
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
         <Route exact path="/data/annotate" element={<Annotation />} />
         <Route exact path="/data/text" element={<TextGenerator data={dic} />} />
         <Route exact path="/sample" element={<Videosample />} />
-        <Route exact path="/privacy" element={<Privacy />} />
+        <Route exact path="/ocr" element={<ComingSoon />} />
         <Route exact path="/about" element={<About />} />
         <Route path="*" element={<Error404 />} />
       </Routes>

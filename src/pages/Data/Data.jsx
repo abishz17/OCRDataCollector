@@ -29,8 +29,8 @@ const Data = () => {
         </Link>
         <Link to={"/data/annotate"}>
           <div className="md:w-[40rem] self-center md:h-[15.5rem] w-[20.5rem] h-[40rem] p-4 rounded-2xl border-t-2 bg-white shadow-lg flex flex-col ease-linear duration-300 md:flex-row-reverse">
-            <div className=" h-full w-full  shadow-md rounded-2xl basis-2/3 relative">
-              <div className="h-full w-full relative border-2 text-center  border-slate-200 rounded-2xl text-slate-900">
+            <div className=" h-full w-full  shadow-md rounded-2xl basis-2/3 ">
+              <div className="h-full w-full  border-2 text-center  border-slate-200 rounded-2xl text-slate-900 z-1">
                 <img alt="Image Section" src={Image} />
               </div>
             </div>

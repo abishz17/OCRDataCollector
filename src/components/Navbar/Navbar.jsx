@@ -33,12 +33,8 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="font-montserrat hidden md:block">
-          <NavLink
-            className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
-            to="/privacy"
-          >
-            <button className="mr-6">Privacy</button>
-          </NavLink>
+          <button className="mr-6">Privacy</button>
+
           <NavLink
             className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
             to="/about"
@@ -63,7 +59,7 @@ const Navbar = () => {
       {isOpen && (
         <div
           id="mobileNav"
-          className="px-4 py-6 fixed top-0 left-0 h-full w-full bg-cyan-200  animate-fade-in-down"
+          className="px-4 py-6 fixed top-0 left-0 h-full w-full bg-cyan-200  animate-fade-in-down z-2"
         >
           <div id="hideMenu" className="flex justify-end">
             <CrossIcon
