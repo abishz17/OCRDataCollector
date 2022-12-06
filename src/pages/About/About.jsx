@@ -16,7 +16,8 @@ const About = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </div>
         <h2 class="text-3xl font-bold mb-32 mt-10">
-          Meet the <span class="text-blue-600">Team</span>
+          Meet the Team
+          {/* <span class="text-gray-600">Team</span> */}
         </h2>
 
         <div class="gap-x-6 lg:gap-x-12 md:grid-cols-3">
