@@ -34,9 +34,14 @@ const Navbar = () => {
         </ul>
         <div className="font-montserrat hidden md:block">
           <button className="mr-6">Privacy</button>
-          <button className="py-2 px-4 text-white bg-black rounded-3xl">
-            About
-          </button>
+          <NavLink
+            className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
+            to="/about"
+          >
+            <button className="py-2 px-4 text-white bg-black rounded-3xl">
+              About
+            </button>
+          </NavLink>
         </div>
         <button
           data-collapse-toggle="mobileNav"
