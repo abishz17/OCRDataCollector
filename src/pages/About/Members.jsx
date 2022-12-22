@@ -1,6 +1,8 @@
 import avatar from '/src/assets/avatar.png';
-import gopal from '/src/assets/gopal.png'
 import abish from "/src/assets/abish.png";
+import gopal from "/src/assets/gopal.png";
+import kiran from "/src/assets/kiran.png";
+import manjeet from "/src/assets/manjeet.png";
 
 export const members = [
   {
@@ -15,7 +17,7 @@ export const members = [
     email: "075bct008.abish@pcampus.edu.np",
   },
   {
-    image: avatar,
+    image: gopal,
     alt: avatar,
     name: "Gopal Baidawar",
     height: 80,
@@ -26,7 +28,7 @@ export const members = [
     email: "075bct039.gopal@pcampus.edu.np",
   },
   {
-    image: avatar,
+    image: kiran,
     alt: avatar,
     name: "Kiran Bhattarai",
     height: 80,
@@ -37,7 +39,7 @@ export const members = [
     email: "075bct042.kiran@pcampus.edu.np",
   },
   {
-    image: avatar,
+    image: manjeet,
     alt: avatar,
     name: "Manjeet Pandey",
     height: 80,
