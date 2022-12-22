@@ -1,5 +1,5 @@
 import { React } from "react";
-const ImageUrl = "http://localhost:8000";
+const ImageUrl = "https://4.240.80.61:8000";
 
 const ImageField = (props) => {
   const handleClick = () => {

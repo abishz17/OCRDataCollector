@@ -46,7 +46,7 @@ const UploadForm = (props) => {
     console.log(formData.get("label"));
 
     axios
-      .post("http://127.0.0.1:8000/api/", formData, {
+      .post("/api/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

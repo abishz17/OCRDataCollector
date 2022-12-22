@@ -38,7 +38,7 @@ const Annotation = () => {
     formData.append("ocr_text", text);
 
     axios
-      .post("http://127.0.0.1:8000/annotate/image/", formData, {
+      .post("/annotate/image/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -55,7 +55,7 @@ const Annotation = () => {
   };
 
   const getImage = () => {
-    axios.get("http://127.0.0.1:8000/annotate/image/").then((response) => {
+    axios.get("/annotate/image/").then((response) => {
       setImage(response.data["image"]);
       setImageid(response.data["id"]);
     });
