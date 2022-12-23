@@ -1,13 +1,12 @@
-import avatar from '/src/assets/avatar.png';
-import abish from "/src/assets/abish.png";
-import gopal from "/src/assets/gopal.png";
-import kiran from "/src/assets/kiran.png";
-import manjeet from "/src/assets/manjeet.png";
+import abish from "/src/assets/images/about_images/abish.png";
+import gopal from "/src/assets/images/about_images/gopal.png";
+import kiran from "/src/assets/images/about_images/kiran.png";
+import manjeet from "/src/assets/images/about_images/manjeet.png";
 
 export const members = [
   {
     image: abish,
-    alt: avatar,
+
     name: "Abish Bhusal",
     height: 80,
     fb: "https://www.facebook.com/abish.125sac",
@@ -18,7 +17,7 @@ export const members = [
   },
   {
     image: gopal,
-    alt: avatar,
+
     name: "Gopal Baidawar",
     height: 80,
     fb: "https://www.facebook.com/baidawar.gopal",
@@ -29,7 +28,7 @@ export const members = [
   },
   {
     image: kiran,
-    alt: avatar,
+
     name: "Kiran Bhattarai",
     height: 80,
     fb: "https://www.facebook.com/kiri0424",
@@ -40,7 +39,7 @@ export const members = [
   },
   {
     image: manjeet,
-    alt: avatar,
+
     name: "Manjeet Pandey",
     height: 80,
     fb: "#",

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../assets/logo_pen.png";
+import Logo from "../../assets/images/logo/logo.png";
 import { NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CrossIcon from "@mui/icons-material/Close";
@@ -12,12 +12,12 @@ const Navbar = () => {
   ];
 
   return (
-    <div className=" sticky top-0 ">
+    <div className=" sticky top-0 bg-primary text-white font-inter">
       <nav className="flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center backdrop-filter backdrop-blur-lg z-10">
         <NavLink to="/">
           <div className="flex items-center">
-            <img src={Logo} alt="Logo" className="h-4" />
-            <span>NepaliOCR</span>
+            <img src={Logo} alt="Logo" className="h-8 pr-4" />
+            <span className="pt-3">NepaliOCR</span>
           </div>
         </NavLink>
         <ul className="font-montserrat items-center hidden md:flex">
@@ -38,9 +38,7 @@ const Navbar = () => {
             className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
             to="/about"
           >
-            <button className="py-2 px-4 text-white bg-black rounded-3xl">
-              About
-            </button>
+            <button className="py-2 px-4 ">About</button>
           </NavLink>
         </div>
         <button
@@ -83,5 +81,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;

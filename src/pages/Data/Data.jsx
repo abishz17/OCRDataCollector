@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Image from "../../assets/type.png";
-import Logo from "../../assets/logo_pen.png";
+import Image from "../../assets/images/other_images/type.png";
+import Logo from "../../assets/images/logo/logo_pen.png";
 
 const Data = () => {
   return (
     <div className="">
-      <div className="flex flex-col gap-6 content-center justify-center items-center">
+      <div className="flex flex-col gap-6 content-center justify-center items-center z-1">
         <Link to={"/data/text"}>
           <div className="md:w-[40rem] self-center md:h-[15.5rem] w-[20.5rem] h-[40rem] p-4 rounded-2xl border-t-2 bg-white shadow-lg flex flex-col ease-linear duration-300 md:flex-row-reverse">
-            <div className=" h-full w-full  shadow-md rounded-xl basis-2/3 relative">
-              <div className="h-full w-full relative border-2 text-center  border-slate-200 rounded-2xl text-slate-900">
+            <div className=" h-full w-full  shadow-md rounded-xl basis-2/3 ">
+              <div className="h-full w-full  border-2 text-center  border-slate-200 rounded-2xl text-slate-900 -z-1">
                 <img alt="Image Section" src={Logo} />
               </div>
             </div>
