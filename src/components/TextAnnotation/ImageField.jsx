@@ -1,6 +1,5 @@
 import { React } from "react";
 import ip_addr from "../../utilities/constant.js";
-// const ImageUrl = "https://4.240.80.61:8000";
 
 const ImageField = (props) => {
   const handleClick = () => {
