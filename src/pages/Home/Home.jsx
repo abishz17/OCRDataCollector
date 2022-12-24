@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import Image from "../../assets/images/other_images/image.png";
 import Button from "../../assets/buttons/Button";
 import HomeSecondary from "./HomeSecondary";
+import GraphSection from "./GraphSection";
+import FeedbackForm from "./FeedbackForm";
 const Home = () => {
   return (
     <div>
@@ -29,6 +31,8 @@ const Home = () => {
         </div>
       </section>
       <HomeSecondary />
+      <GraphSection />
+      <FeedbackForm />
     </div>
   );
 };
