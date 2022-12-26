@@ -61,6 +61,7 @@ const Annotation = () => {
     });
   };
 
+
   useEffect(() => {
     getImage();
   }, []);
