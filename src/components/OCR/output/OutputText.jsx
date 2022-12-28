@@ -3,10 +3,10 @@ import React from "react";
 
 const OutputText = () => {
   return (
-    <div className="flex flex-col justify-center gap-2 px-24 ">
-      <div className="bg-gray-500 rounded-xl">image.png</div>
+    <div className="flex flex-col gap-5 px-24 bg-teal-500 rounded-2xl ">
+      <div className="bg-gray-500 rounded-xl mt-4">image.png</div>
       <div className="rounded-xl">
-        <TextareaAutosize readOnly />
+        <TextareaAutosize />
       </div>
     </div>
   );
