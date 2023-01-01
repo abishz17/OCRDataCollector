@@ -3,15 +3,8 @@ import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 
 const Ninput = (props) => {
-  const max = 15;
-  const min = 1;
   const dropdownChangeHandler = (e) => {
-    var value = parseInt(e.target.value, 10);
-
-    if (value > max) value = max;
-    if (value < min) value = min;
-
-    props.getNumber(value);
+    props.getNumber(e.target.value);
   };
 
   return (

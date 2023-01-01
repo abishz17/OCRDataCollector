@@ -19,7 +19,7 @@ const TextGenerator = (props) => {
     setNumber(selectedNumber);
   };
   const onSubmit = () => {
-    if (number === "0" || number === "") {
+    if (number === "0" || number === "" || parseInt(number) < 0) {
       setIsNumberValid(false);
       console.log("Invalid");
       return;
@@ -37,7 +37,7 @@ const TextGenerator = (props) => {
           <Ninput getNumber={getNumber} onSubmit={onSubmit} />
           {!isNumberValid && (
             <p className="text-red-800 text-center mt-10">
-              This field cant be 0 or empty.
+              This field cant be 0 or empty or negative.
             </p>
           )}
         </>
