@@ -4,12 +4,12 @@ import { useState, useRef } from "react";
 const UploadImage = (props) => {
   const imageRef = useRef(null);
   const [file, setFile] = useState("");
-  const [fileName, setFileName] = useState("");
+
   const [isShown, setIsShown] = useState(true);
 
   const onChange = (e) => {
     setFile(e.target.files[0]);
-    setFileName(e.target.files[0].name);
+    props.setFileName(e.target.files[0].name);
     props.getFile(e.target.files[0]);
   };
   return (
@@ -33,7 +33,13 @@ const UploadImage = (props) => {
       <p className="text-font_secondary">
         Drag and Drop files <br /> OR <br /> Browse
       </p>
-      {fileName && <ImagePop fileName={fileName} file={file} />}
+      {props.fileName && (
+        <ImagePop
+          fileName={props.fileName}
+          file={file}
+          setResult={props.setResult}
+        />
+      )}
     </div>
   );
 };

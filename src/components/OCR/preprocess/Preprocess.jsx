@@ -12,7 +12,12 @@ const Preprocess = (props) => {
 
   return (
     <div className="flex flex-row justify-center gap-10 px-10 py-10">
-      <UploadImage getFile={getFile} />
+      <UploadImage
+        getFile={getFile}
+        fileName={props.fileName}
+        setFileName={props.setFileName}
+        setResult={props.setResult}
+      />
       <ChooseOutput file={file} />
     </div>
   );
