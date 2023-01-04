@@ -10,7 +10,7 @@ import { makeASentence } from "../../utilities/makeSentence";
 import { useEffect } from "react";
 const TextGenerator = (props) => {
   const [isShown, setIsShown] = useState(false);
-  const [number, setNumber] = useState(5);
+  const [number, setNumber] = useState(0);
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
   const [isNumberValid, setIsNumberValid] = useState(true);

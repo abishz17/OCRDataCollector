@@ -5,7 +5,7 @@ import ZoomOutMapIcon from "@mui/icons-material/ZoomOutMap";
 import CloseIcon from "@mui/icons-material/Close";
 const OutputHeader = () => {
   return (
-    <div className="flex flex-row mt-4 self-end basis-full ">
+    <div className="flex flex-row mt-4 bg-gray-200 rounded-3xl px-2 py-1 items-center mb-8  float-right mr-2 ">
       <ZoomOutIcon />
       <div className="">
         <input
