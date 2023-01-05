@@ -1,11 +1,13 @@
 import Output from "../../components/OCR/output/Output";
 import Preprocess from "../../components/OCR/preprocess/Preprocess";
 import { useState } from "react";
-const Desktop1 = () => {
+
+const OCR = () => {
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState();
   const [src, setSrc] = useState();
   const [result, setResult] = useState();
+  const [isSuccess, setSuccess] = useState(false);
   const fileSetter = (f) => {
     setFile(f);
     setFileName(f.name);
@@ -23,10 +25,10 @@ const Desktop1 = () => {
   };
 
   return (
-    <div>
-      <div className="lg:px-48 md:px-12 px-4 bg-gray-200 flex flex-col text-center gap-10">
+    <div className="bg-gray-200 py-5 md:py-10 overflow-scroll">
+      <div className="lg:px-48 md:px-12 px-4 flex flex-col h-[100vh] text-center gap-10">
         <div
-          className="bg-white mt-20 rounded-xl items-center flex-1"
+          className="bg-white mt-10 rounded-xl items-center "
           onDragOver={handleOndragOver}
           onDrop={handleOndrop}
         >
@@ -35,6 +37,7 @@ const Desktop1 = () => {
             setFileName={setFileName}
             fileName={fileName}
             setResult={setResult}
+            setSuccess={setSuccess}
           />
         </div>
 
@@ -46,4 +49,4 @@ const Desktop1 = () => {
   );
 };
 
-export default Desktop1;
+export default OCR;

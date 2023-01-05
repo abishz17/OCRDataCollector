@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import Profiles from "/src/components/About/Profiles";
 
 const About = () => {
@@ -30,7 +30,7 @@ const About = () => {
         {/* <span class="text-gray-600">Team</span> */}
       </h2>
 
-      <div class="gap-x-6 lg:gap-x-12 md:grid-cols-3">
+      <div class="gap-x-6 lg:gap-x-12 md:grid-cols-3 -z-1">
         <Profiles />
       </div>
     </div>

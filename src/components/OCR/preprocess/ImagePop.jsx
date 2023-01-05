@@ -2,22 +2,18 @@ import React from "react";
 import tick from "../../../assets/images/other_images/tick.png";
 import cross from "../../../assets/images/other_images/cross.png";
 import axios from "axios";
-import { useState } from "react";
-const ImagePop = (props) => {
-  const [visible, setVisible] = useState(true);
 
+const ImagePop = (props) => {
   const onSubmit = async () => {
-    console.log(props.fileName);
     const formData = new FormData();
     formData.append("image", props.file);
-
     try {
-      console.log(formData);
       const res = await axios.post("http://localhost:8000/ocr/ocr/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+      props.setSuccess(true);
 
       props.setResult("hello");
     } catch (err) {
@@ -28,13 +24,12 @@ const ImagePop = (props) => {
   };
 
   return (
-    <div className="relative flex flex-row flex-none  bg-gray-500 rounded-2xl px-3 py-1 w-[150px]  text-left self-center">
+    <div className="flex flex-row bg-gray-500 rounded-2xl h-10 px-2 py-1 w-4/5 md:w-1/5 self-center z-1">
       <div className="w-2/3 overflow-clip ">
         <p>{props.fileName}</p>
       </div>
-      <div className="flex flex-row gap-2 w-1/3">
-        <img src={tick} className=" h-5 w-5" onClick={onSubmit} />
-        <img src={cross} className=" h-5 w-5" />
+      <div className="flex flex-row gap-2 justify-end  w-1/3">
+        <img src={tick} className=" h-8 w-8" onClick={onSubmit} />
       </div>
     </div>
   );

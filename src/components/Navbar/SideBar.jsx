@@ -18,6 +18,16 @@ const SideBar = (props) => {
             </NavLink>
           </li>
         ))}
+        <li className="my-6" onClick={() => props.setOpen(false)}>
+          <NavLink className="growing-underline" to="/about">
+            About
+          </NavLink>
+        </li>
+        <li className="my-6" onClick={() => props.setOpen(false)}>
+          <NavLink className="growing-underline" to="/privacy">
+            Privacy
+          </NavLink>
+        </li>
       </ul>
     </div>
   );
