@@ -7,7 +7,7 @@ const EachCard = (props) => {
         <div
           role="list"
           aria-label="Behind the scenes People "
-          className="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around"
+          className="lg:flex md:flex sm:flex -z-1 items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around"
         >
           <div
             role="listitem"
