@@ -10,7 +10,7 @@ export default function FeedBackForm() {
   const [open, setIsOpen] = useState(false);
   const onSubmit = (data) => {
     axios
-      .post("/feedback/", data, {
+      .post("http://localhost:8000/feedback/", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

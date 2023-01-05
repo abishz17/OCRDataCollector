@@ -5,7 +5,7 @@ const SideBar = (props) => {
   return (
     <div
       id="mobileNav"
-      className="px-4 py-6  bg-primary animate-fade-in-down text-center"
+      className="px-4 py-6 h-[100vh]  bg-primary animate-fade-in-down text-center"
     >
       <ul
         className="font-montserrat flex flex-col mx-8 my-4 items-center text-3xl"

@@ -52,7 +52,7 @@ const TextGenerator = (props) => {
             setText={setText}
           />
 
-          <div className="basis-1/2 pl-5 pr-5 relative text-center lg:border-l-2 border-black">
+          <div className="basis-1/2 pl-5 pr-5 mb-8 relative text-center lg:border-l-2 border-black">
             <UploadForm text={text} />
           </div>
         </div>

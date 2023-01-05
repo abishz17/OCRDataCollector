@@ -43,7 +43,6 @@ const UploadForm = (props) => {
     const formData = new FormData();
     formData.append("image", selectedFile);
     formData.append("label", props.text);
-    console.log(formData.get("label"));
 
     axios
       .post("/api/", formData, {

@@ -1,6 +1,66 @@
 import React from "react";
+import { useState } from "react";
+import axios from "axios";
 
 const FeedbackForm = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(" ");
+  const [data, setData] = useState({
+    name: "",
+    description: "",
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setData((prevProps) => ({
+      ...prevProps,
+      [name]: value,
+    }));
+  };
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+  const handleEmailChange = (e) => {
+    if (!isValidEmail(e.target.value)) {
+      setError("Invalid Email");
+    } else {
+      setError(null);
+    }
+    setEmail(e.target.value);
+  };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (!data.description) {
+      setError("Message Cannot be Empty");
+    } else if (!email) {
+      setError("Please Enter Email");
+    } else if (!error) {
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("email", email);
+      formData.append("description", data.description);
+      console.log(formData);
+
+      axios
+        .post("http://localhost:8000/feedback/", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((res) => {
+          alert("Thank You For Submitting");
+          setEmail("");
+          setData((prevProps) => ({
+            ...prevProps,
+            ["description"]: "",
+            ["name"]: "",
+          }));
+        })
+        .catch((err) => {
+          alert("Submission failed.Server error");
+        });
+    }
+  };
   return (
     <div className="w-full">
       <h2 className="text-3xl font-bold my-10 text-center ">
@@ -26,6 +86,7 @@ const FeedbackForm = () => {
                 <div className="form-group mb-6">
                   <input
                     type="text"
+                    name="name"
                     className="form-control block
                   w-full
                   pl-3
@@ -41,12 +102,15 @@ const FeedbackForm = () => {
                   m-0
                   focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     id="exampleInput7"
-                    placeholder="Name"
+                    placeholder="Name "
+                    value={data.name}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="form-group mb-6">
                   <input
                     type="email"
+                    name="email"
                     className="form-control block
                   w-full
                   px-3
@@ -62,10 +126,12 @@ const FeedbackForm = () => {
                   m-0
                   focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     id="exampleInput8"
-                    placeholder="Email address"
+                    placeholder="Email address *"
+                    value={email}
+                    onChange={handleEmailChange}
                   />
                 </div>
-                <div className="form-group mb-6">
+                <div className="form-group mb-3">
                   <textarea
                     className="
                   form-control
@@ -86,10 +152,14 @@ const FeedbackForm = () => {
                 "
                     id="exampleFormControlTextarea13"
                     rows="3"
-                    placeholder="Message"
+                    name="description"
+                    placeholder="Message *"
+                    value={data.description}
+                    onChange={handleInputChange}
+                    required
                   ></textarea>
                 </div>
-
+                {error && <p className="text-primary mb-2">{error}</p>}
                 <button
                   type="submit"
                   className="
@@ -110,8 +180,9 @@ const FeedbackForm = () => {
                 transition
                 duration-150
                 ease-in-out"
+                  onClick={onSubmit}
                 >
-                  Send
+                  Submit
                 </button>
               </form>
             </div>
