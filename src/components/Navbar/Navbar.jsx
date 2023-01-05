@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Logo from "../../assets/images/logo/logo.png";
 import { NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import CrossIcon from "@mui/icons-material/Close";
+
+import SideBar from "./SideBar";
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const Menus = [
@@ -48,36 +49,12 @@ const Navbar = () => {
           type="button"
           id="showMenu"
           className="md:hidden"
-          onClick={() => setOpen(true)}
+          onClick={() => setOpen(!isOpen)}
         >
           <MenuIcon />
         </button>
       </nav>
-      {isOpen && (
-        <div
-          id="mobileNav"
-          className="px-4 py-6 fixed top-0 left-0 h-full w-full bg-cyan-200  animate-fade-in-down z-2"
-        >
-          <div id="hideMenu" className="flex justify-end">
-            <CrossIcon
-              className="h-16 w-16 cursor-pointer"
-              onClick={() => setOpen(false)}
-            />
-          </div>
-          <ul
-            className="font-montserrat flex flex-col mx-8 my-24 items-center text-3xl"
-            id="hideMenu"
-          >
-            {Menus.map((menu, index) => (
-              <li className="my-6" onClick={() => setOpen(false)}>
-                <NavLink className="growing-underline" to={menu.to}>
-                  {menu.title}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {isOpen && <SideBar setOpen={setOpen} Menus={Menus} />}
     </div>
   );
 };

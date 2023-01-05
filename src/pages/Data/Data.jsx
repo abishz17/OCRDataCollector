@@ -5,8 +5,8 @@ import Logo from "../../assets/images/logo/logo_pen.png";
 
 const Data = () => {
   return (
-    <div className="">
-      <div className="flex flex-col gap-6 content-center justify-center items-center z-1">
+    <div className="mt-5 md:mt-10 lg:mt-20">
+      <div className="flex flex-col gap-6 content-center justify-center items-center -z-1">
         <Link to={"/data/text"}>
           <div className="md:w-[40rem] self-center md:h-[15.5rem] w-[20.5rem] h-[40rem] p-4 rounded-2xl border-t-2 bg-white shadow-lg flex flex-col ease-linear duration-300 md:flex-row-reverse">
             <div className=" h-full w-full  shadow-md rounded-xl basis-2/3 ">

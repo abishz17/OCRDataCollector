@@ -8,11 +8,10 @@ const Ninput = (props) => {
   };
 
   return (
-    <div className="justify-self-center flex flex-col gap-4 mt-10 ">
+    <div className="justify-self-center flex flex-col gap-4 mt-10 relative -z-1 ">
       <TextField
         type="number"
         className="mb-4 w-[30%] self-center"
-        defaultValue={5}
         variant="filled"
         label="No.of Lines"
         onChange={dropdownChangeHandler}

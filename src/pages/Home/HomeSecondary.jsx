@@ -2,8 +2,8 @@ import React from "react";
 
 const HomeSecondary = () => {
   return (
-    <div className=" bg-secondary w-full ">
-      <div className="text-base flex lg:pl-48 md:pl-12 pl-4  w-[80%] py-10 gap-10">
+    <div className=" bg-secondary w-full">
+      <div className="text-base flex flex-col md:flex-row lg:flex-row lg:px-48 md:px-12 px-4 py-10 gap-10">
         <div className="text-left flex-1 ">
           <p className="text-[#52aed1] text-left  inline-block text-3xl">
             HamroOCR is an initiative <br /> to help computers learn <br />

@@ -31,7 +31,7 @@ const TextGenerator = (props) => {
   };
 
   return (
-    <div className="lg:ml-7">
+    <div className="lg:ml-7 z-1">
       {!isShown && (
         <>
           <Ninput getNumber={getNumber} onSubmit={onSubmit} />

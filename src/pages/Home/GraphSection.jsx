@@ -62,12 +62,19 @@ export const data = {
 
 export default function GraphSection() {
   return (
-    <div class="py-8 flex ] w-full px-48 gap-5 ">
-      <div class="flex-1 rounded-lg shadow-lg">
-        <Line options={options} data={data} />
+    <div className="px-4 md:px-12 lg:px-48">
+      <div class="py-8 flex flex-col md:flex-row w-full gap-5 ">
+        <div class="flex-1 rounded-lg shadow-lg">
+          <Line options={options} data={data} />
+        </div>
+        <div class="flex-1 rounded-lg shadow-lg">
+          <Line options={options} data={data} />
+        </div>
       </div>
-      <div class="flex-1 rounded-lg shadow-lg">
-        <Line options={options} data={data} />
+      <div>
+        <p className="text-sm font-thin pl-3 flex-none">
+          *This graph is just a demonstration it doesnot represent any data
+        </p>
       </div>
     </div>
   );
