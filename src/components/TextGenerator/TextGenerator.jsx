@@ -3,11 +3,9 @@ import { useState } from "react";
 import LineText from "./LineText";
 import Ninput from "./Ninput";
 import UploadForm from "./UploadForm";
-import { Button } from "@mui/material";
-import Model from "./Modal";
+import Button from "/src/assets/buttons/Button";
 import { makeASentence } from "../../utilities/makeSentence";
 
-import { useEffect } from "react";
 const TextGenerator = (props) => {
   const [isShown, setIsShown] = useState(false);
   const [number, setNumber] = useState(0);
@@ -43,7 +41,7 @@ const TextGenerator = (props) => {
         </>
       )}
       {isShown && (
-        <div className="flex flex-col lg:flex-row lg:mx-3">
+        <div className="block m-auto relative h-[85vh] mx-4 md:mx-10 border-1 border-cyan-200">
           <LineText
             text={text}
             open={open}
@@ -51,10 +49,27 @@ const TextGenerator = (props) => {
             setIsShown={setIsShown}
             setText={setText}
           />
+          <div className=" flex justify-center m-auto md:w-4/5 text-center">
+            <div className="mt-5">
+              <Button
+                name="Expand"
+                title="Expand"
+                onClick={() => {
+                  setOpen(true);
+                  console.log("hello ", open);
+                }}
+              />
 
-          <div className="basis-1/2 pl-5 pr-5 mb-8 relative text-center lg:border-l-2 border-black">
-            <UploadForm text={text} />
+              <Button
+                name="Clear"
+                className="text-black ml-auto hover:cursor-pointer"
+                onClick={(e) => {
+                  setIsShown(false);
+                }}
+              />
+            </div>
           </div>
+          <UploadForm text={text} />
         </div>
       )}
     </div>

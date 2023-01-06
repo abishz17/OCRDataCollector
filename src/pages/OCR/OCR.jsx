@@ -40,10 +40,11 @@ const OCR = () => {
             setSuccess={setSuccess}
           />
         </div>
-
-        <div className="bg-white mb-20 rounded-xl items-center flex-1 ">
-          <Output fileName={fileName} src={src} result={result} />
-        </div>
+        {isSuccess && (
+          <div className="bg-white mb-20 rounded-xl items-center flex-1 ">
+            <Output fileName={fileName} src={src} result={result} />
+          </div>
+        )}
       </div>
     </div>
   );

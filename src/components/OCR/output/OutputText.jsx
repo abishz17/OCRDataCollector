@@ -3,9 +3,9 @@ import React from "react";
 
 const OutputText = (props) => {
   return (
-    <div className="flex flex-col  gap-5 h-full bg-gray-200 rounded-2xl w-full md:w-1/3">
+    <div className="flex flex-col  gap-5 h-full border-2 rounded-2xl w-full md:w-1/3">
       <div
-        className="bg-gray-500 rounded-xl flex-none h-10 py-2 mt-4 w-1/3 overflow-clip self-center mx-10  "
+        className="bg-teal-200 rounded-xl flex-none h-10 py-2 mt-4 w-1/3 overflow-clip self-center mx-10  "
         title={props.fileName}
       >
         <p className="mx-2">{props.fileName}</p>

@@ -29,7 +29,7 @@ const Textfield = (props) => {
 
   return (
     <>
-      <div className="bg-gray-100 ">
+      <div className="bg-gray-100">
         <TextField
           variant="standard"
           label="Enter Text"
