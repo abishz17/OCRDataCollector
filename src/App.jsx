@@ -15,7 +15,7 @@ import Videosample from "./components/Videosample/Videosample";
 import Error404 from "./pages/Error/Error404";
 
 const App = () => {
-  return (
+  return ( 
     <div className="text-black">
       <Navbar />
       <Routes>
