@@ -14,8 +14,8 @@ const ImagePop = (props) => {
         },
       });
       props.setSuccess(true);
-
-      props.setResult("hello");
+      console.log(res.data);
+      props.setResult(res.data);
     } catch (err) {
       if (err) {
         console.log(err, "There was a problem with the server");
