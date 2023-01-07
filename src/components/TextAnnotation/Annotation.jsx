@@ -21,6 +21,7 @@ const Annotation = () => {
     return parseInt(hexNumber, 16) >= 2304 && parseInt(hexNumber, 16) <= 2431; //devanagari script range
   };
   const uploadHandler = () => {
+    console.log("Clickk");
     if (text.trim() === "") {
       setIsTextValid(false);
       setError("Enter valid text");
@@ -31,7 +32,7 @@ const Annotation = () => {
       setIsNepaliText(false);
       return;
     }
-    if (error) {
+    if (!error) {
       setIsTextValid(true);
       setIsNepaliText(true);
       const formData = new FormData();
@@ -58,10 +59,8 @@ const Annotation = () => {
 
   const getImage = () => {
     axios.get("/annotate/image").then((response) => {
-      console.log(response.data);
       setImage(response.data["image"]);
       setImageid(response.data["id"]);
-      console.log(response.data["id"]);
     });
   };
 

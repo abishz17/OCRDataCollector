@@ -6,7 +6,6 @@ const Preprocess = (props) => {
   const [file, setFile] = useState(null);
   const getFile = (f) => {
     props.fileSetter(f);
-    console.log(f);
     setFile(f);
   };
 

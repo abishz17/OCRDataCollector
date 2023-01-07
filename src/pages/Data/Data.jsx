@@ -5,7 +5,7 @@ import Logo from "../../assets/images/other_images/logo_pen.png";
 
 const Data = () => {
   return (
-    <div className="block m-auto relative h-[85vh] mx-4 md:mx-10 border-1 border-cyan-200">
+    <div className="block m-auto relative h-fit mx-4 md:mx-10 border-1 border-cyan-200">
       <Link to={"/data/text"}>
         <div className="flex h-[25vh] justify-start md:px-24 items-center m-auto mt-10 md:w-[80%] overflow-y-auto text-left bg-blue-100 rounded-md border-solid border-black border-2">
           <div className="hidden md:block">

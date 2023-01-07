@@ -5,7 +5,7 @@ const OutputImage = (props) => {
   return (
     <div className="items-center w-full md:w-2/3 border-2 rounded-2xl ">
       <div className="">
-        <OutputHeader />
+        <OutputHeader unfileSetter={props.unfileSetter} />
       </div>
 
       <div className="m-20">

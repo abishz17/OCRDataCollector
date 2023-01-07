@@ -1,13 +1,12 @@
 import upload from "../../../assets/images/other_images/upload.png";
 import ImagePop from "./ImagePop";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 const UploadImage = (props) => {
   const imageRef = useRef(null);
   const [file, setFile] = useState("");
 
-  const [isShown, setIsShown] = useState(true);
-
   const onChange = (e) => {
+    props.setSuccess(false);
     setFile(e.target.files[0]);
     props.setFileName(e.target.files[0].name);
     props.getFile(e.target.files[0]);

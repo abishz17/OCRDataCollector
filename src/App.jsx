@@ -18,21 +18,27 @@ import OCR from "./pages/OCR/OCR";
 
 const App = () => {
   return (
-    <div className="text-black">
-      <Navbar />
+    <div className="text-black min-h-screen relative flex flex-col bg-gray-200">
+      <div className="">
+        <Navbar />
 
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/data" element={<Data />} />
-        <Route exact path="/data/annotate" element={<Annotation />} />
-        <Route exact path="/data/text" element={<TextGenerator data={dic} />} />
-        <Route exact path="/sample" element={<Videosample />} />
-        <Route exact path="/ocr" element={<OCR />} />
-        <Route exact path="/about" element={<About />} />
-        <Route path="*" element={<Error404 />} />
-      </Routes>
-
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/data" element={<Data />} />
+          <Route exact path="/data/annotate" element={<Annotation />} />
+          <Route
+            exact
+            path="/data/text"
+            element={<TextGenerator data={dic} />}
+          />
+          <Route exact path="/sample" element={<Videosample />} />
+          <Route exact path="/ocr" element={<OCR />} />
+          <Route exact path="/about" element={<About />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </div>
       <FeedBackForm />
+
       <Footer />
     </div>
   );

@@ -3,7 +3,7 @@ import ZoomOutIcon from "@mui/icons-material/ZoomOut";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import ZoomOutMapIcon from "@mui/icons-material/ZoomOutMap";
 import CloseIcon from "@mui/icons-material/Close";
-const OutputHeader = () => {
+const OutputHeader = (props) => {
   return (
     <div className="flex flex-row mt-4 bg-teal-200 rounded-3xl px-2 py-1 items-center mb-8  float-right mr-2 ">
       <ZoomOutIcon />
@@ -16,7 +16,9 @@ const OutputHeader = () => {
       </div>
       <ZoomInIcon />
       <ZoomOutMapIcon />
-      <CloseIcon />
+      <div onClick={props.unfileSetter}>
+        <CloseIcon />
+      </div>
     </div>
   );
 };

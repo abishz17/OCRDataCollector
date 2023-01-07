@@ -8,11 +8,17 @@ const OCR = () => {
   const [src, setSrc] = useState();
   const [result, setResult] = useState();
   const [isSuccess, setSuccess] = useState(false);
+
   const fileSetter = (f) => {
     setFile(f);
     setFileName(f.name);
     setSrc(URL.createObjectURL(f));
-    console.log(result);
+  };
+  const unfileSetter = () => {
+    setSuccess(false);
+    setFile(null);
+    setFileName(null);
+    setSrc(null);
   };
   const handleOndragOver = (e) => {
     e.preventDefault();
@@ -25,10 +31,10 @@ const OCR = () => {
   };
 
   return (
-    <div className="bg-gray-200 py-5 md:py-10 overflow-scroll">
-      <div className="lg:px-48 md:px-12 px-4 flex flex-col h-[100vh] text-center gap-10">
+    <div className="py-5 md:py-10  overflow-scroll">
+      <div className="lg:px-48 md:px-12 px-4 flex flex-col text-center gap-10">
         <div
-          className="bg-white mt-10 rounded-xl items-center "
+          className="border-2 bg-white mt-10 rounded-xl items-center "
           onDragOver={handleOndragOver}
           onDrop={handleOndrop}
         >
@@ -42,7 +48,12 @@ const OCR = () => {
         </div>
         {isSuccess && (
           <div className="bg-white mb-20 rounded-xl items-center flex-1 ">
-            <Output fileName={fileName} src={src} result={result} />
+            <Output
+              fileName={fileName}
+              src={src}
+              result={result}
+              unfileSetter={unfileSetter}
+            />
           </div>
         )}
       </div>

@@ -62,8 +62,8 @@ const FeedbackForm = () => {
     }
   };
   return (
-    <div className="w-full">
-      <h2 className="text-3xl font-bold my-10 text-center ">
+    <div className="w-full bg-feedback pb-5">
+      <h2 className="text-3xl font-bold py-10 text-center ">
         Share Your Experience with us
       </h2>
       <div className="md:text-left lg:px-48 md:px-12 px-4">
