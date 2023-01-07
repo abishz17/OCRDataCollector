@@ -18,12 +18,11 @@ const Home = () => {
             truth, So we can built a proper OCR for Nepali Language.
           </p>
           <div className="font-montserrat">
-            <NavLink to="/data">
+            <NavLink to="/ocr">
               <Button name="Convert" />
             </NavLink>
-            <NavLink to="/sample">
-              <Button name="Watch Sample" />
-            </NavLink>
+
+            <Button name="Watch Sample" />
           </div>
         </div>
         <div className="hidden lg:block justify-around mt-4 md:mt-0 md:flex-1 ">
