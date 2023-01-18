@@ -8,6 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 build/
+media/
+media/*
 
 node_modules
 dist

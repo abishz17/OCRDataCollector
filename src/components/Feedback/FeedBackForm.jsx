@@ -10,7 +10,7 @@ export default function FeedBackForm() {
   const [open, setIsOpen] = useState(false);
   const onSubmit = (data) => {
     axios
-      .post("http://127.0.0.1:8000/feedback/", data, {
+      .post("http://localhost:8000/feedback/", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -21,7 +21,7 @@ export default function FeedBackForm() {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-2">
+    <div className="fixed bottom-10 text-white bg-white rounded-3xl right-5 z-50">
       <Tooltip title="Give us your feedback">
         <IconButton
           onClick={() => {

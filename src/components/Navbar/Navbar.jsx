@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Logo from "../../assets/logo_pen.png";
+import Logo from "../../assets/images/logo/logo.png";
 import { NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import CrossIcon from "@mui/icons-material/Close";
+
+import SideBar from "./SideBar";
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const Menus = [
@@ -12,12 +13,12 @@ const Navbar = () => {
   ];
 
   return (
-    <div className=" sticky top-0 ">
+    <div className=" sticky top-0  bg-primary text-white font-inter z-10 ">
       <nav className="flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center backdrop-filter backdrop-blur-lg z-10">
         <NavLink to="/">
           <div className="flex items-center">
-            <img src={Logo} alt="Logo" className="h-4" />
-            <span>NepaliOCR</span>
+            <img src={Logo} alt="Logo" className="h-8 pr-4" />
+            <span className="pt-3">NepaliOCR</span>
           </div>
         </NavLink>
         <ul className="font-montserrat items-center hidden md:flex">
@@ -33,19 +34,12 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="font-montserrat hidden md:block">
-          <NavLink
-            className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
-            to="/privacy"
-          >
-            <button className="mr-6">Privacy</button>
-          </NavLink>
+          <button className="mr-6">Privacy</button>
           <NavLink
             className={({ isActive }) => (isActive ? "text-cyan-600" : "")}
             to="/about"
           >
-            <button className="py-2 px-4 text-white bg-black rounded-3xl">
-              About
-            </button>
+            <button className="py-2 px-4 ">About</button>
           </NavLink>
         </div>
         <button
@@ -55,38 +49,13 @@ const Navbar = () => {
           type="button"
           id="showMenu"
           className="md:hidden"
-          onClick={() => setOpen(true)}
+          onClick={() => setOpen(!isOpen)}
         >
           <MenuIcon />
         </button>
       </nav>
-      {isOpen && (
-        <div
-          id="mobileNav"
-          className="px-4 py-6 fixed top-0 left-0 h-full w-full bg-cyan-200  animate-fade-in-down"
-        >
-          <div id="hideMenu" className="flex justify-end">
-            <CrossIcon
-              className="h-16 w-16 cursor-pointer"
-              onClick={() => setOpen(false)}
-            />
-          </div>
-          <ul
-            className="font-montserrat flex flex-col mx-8 my-24 items-center text-3xl"
-            id="hideMenu"
-          >
-            {Menus.map((menu, index) => (
-              <li className="my-6" onClick={() => setOpen(false)}>
-                <NavLink className="growing-underline" to={menu.to}>
-                  {menu.title}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {isOpen && <SideBar setOpen={setOpen} Menus={Menus} />}
     </div>
   );
 };
-
 export default Navbar;

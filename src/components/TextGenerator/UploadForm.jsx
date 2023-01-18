@@ -2,8 +2,7 @@ import React from "react";
 import { useState, useRef } from "react";
 import axios from "axios";
 import { ImageSearch } from "@mui/icons-material";
-
-import { Button } from "@mui/material";
+import Button from "/src/assets/buttons/Button";
 import ImageModal from "./ImageModal";
 import { Delete } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
@@ -43,10 +42,9 @@ const UploadForm = (props) => {
     const formData = new FormData();
     formData.append("image", selectedFile);
     formData.append("label", props.text);
-    console.log(formData.get("label"));
 
     axios
-      .post("http://127.0.0.1:8000/api/", formData, {
+      .post("/api/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -61,60 +59,58 @@ const UploadForm = (props) => {
       });
   };
   return (
-    <div className="lg:ml-4 gap-5 lg:mt-9 border-black border-3 text-slate-900">
-      <input
-        style={{ display: "none" }}
-        type="file"
-        accept="image/*"
-        onChange={selectFile}
-        ref={fileRef}
-      ></input>
-      {!isImageValid && (
-        // <div className="lg:mt-[25%] mt-3 text-cyan-900 cursor-pointer border-dashed border-2 border-black">
-        <div
-          className="lg:absolute flex justify-center items-center 
-                      w-11/12 h-5/6 text-cyan-900 cursor-pointer 
-                      border-dashed border-2 border-black"
-          onClick={() => {
-            fileRef.current.click();
-          }}
-        >
-          <ImageSearch />
-          <span>Upload a file</span>
-        </div>
-      )}
+    <>
+      <div className="flex justify-center items-center m-auto mt-5 overflow-y-auto text-center md:w-4/5 h-[25%] bg-blue-100 rounded-md border-solid border-black border-2">
+        <input
+          style={{ display: "none" }}
+          type="file"
+          accept="image/*"
+          onChange={selectFile}
+          ref={fileRef}
+          className="hidden"
+        ></input>
 
-      {!icon && (
-        <div className="">
-          {!isImageValid ? (
-            <p className="text-red-800">Enter a valid image</p>
-          ) : (
-            <ImageModal src={src} alt={alt} />
-          )}
-          {}
-        </div>
-      )}
+        {!isImageValid && (
+          <div
+            className="text-cyan-900 cursor-pointer 
+                       border-black "
+            onClick={() => {
+              fileRef.current.click();
+            }}
+          >
+            <ImageSearch />
+            <span>Upload a file</span>
+          </div>
+        )}
 
+        {!icon && (
+          <div className="max-h-full">
+            {!isImageValid ? (
+              <p className="text-red-800">Enter a valid image</p>
+            ) : (
+              <ImageModal src={src} alt={alt} />
+            )}
+            {}
+          </div>
+        )}
+      </div>
+      <p className="text-md md:text-lg my-3 py-3 text-red-900 text-center">
+        ! Write on A4 paper, maintain a healthy line spacing and capture the
+        image in a bright lightened environment.
+      </p>
       {!icon && isImageValid && (
-        <div className="flex-row lg:absolute inline-flex">
-          <Delete
-            fontSize="large"
-            className="float-left mr-6 hover:cursor-pointer"
+        <div className=" flex flex-row mt-5 justify-center ">
+          <Button
+            name="Re-upload"
             onClick={() => {
               setIcon(true);
               setIsImageValid(false);
             }}
           />
-          <Button
-            variant="contained"
-            onClick={uploadHandler}
-            className="cursor-pointer"
-          >
-            Submit
-          </Button>
+          <Button name="Submit" onClick={uploadHandler} />
         </div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -1,27 +1,29 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
+import { useState } from "react";
 
 const Ninput = (props) => {
-  const max = 15;
-  const min = 1;
+  const [value, setValue] = useState(0);
   const dropdownChangeHandler = (e) => {
-    var value = parseInt(e.target.value, 10);
-
-    if (value > max) value = max;
-    if (value < min) value = min;
-
-    props.getNumber(value);
+    setValue(e.target.value);
+    props.getNumber(e.target.value);
   };
 
   return (
-    <div className="justify-self-center flex flex-col gap-4 mt-10 ">
+    <div className="justify-self-center flex flex-col gap-4 mt-10 relative -z-1 ">
       <TextField
-        type="number"
+        inputProps={{
+          step: 1,
+          min: 1,
+          max: 15,
+          type: "number",
+        }}
         className="mb-4 w-[30%] self-center"
-        defaultValue={5}
         variant="filled"
-        label="No.of Lines"
+        label="No. of Lines"
+        value={value}
+        required
         onChange={dropdownChangeHandler}
       />
       <Button
