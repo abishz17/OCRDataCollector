@@ -21,14 +21,14 @@ const TextGenerator = (props) => {
       number === 0 ||
       number.length == 0 ||
       parseInt(number) < 0 ||
-      number > 15
+      number > 15 ||
+      number === "0"
     ) {
       setIsNumberValid(false);
-      console.log("Invalid" + number);
       return;
     }
     setIsNumberValid(true);
-    console.log(number);
+
     setIsShown(true);
     setText(makeASentence(props.data, number));
   };
@@ -61,7 +61,6 @@ const TextGenerator = (props) => {
                 title="Expand"
                 onClick={() => {
                   setOpen(true);
-                  console.log("hello ", open);
                 }}
               />
 
