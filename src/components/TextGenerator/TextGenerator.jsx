@@ -17,9 +17,14 @@ const TextGenerator = (props) => {
     setNumber(selectedNumber);
   };
   const onSubmit = () => {
-    if (number === "0" || number === "" || parseInt(number) < 0) {
+    if (
+      number === 0 ||
+      number.length == 0 ||
+      parseInt(number) < 0 ||
+      number > 15
+    ) {
       setIsNumberValid(false);
-      console.log("Invalid");
+      console.log("Invalid" + number);
       return;
     }
     setIsNumberValid(true);
@@ -35,7 +40,7 @@ const TextGenerator = (props) => {
           <Ninput getNumber={getNumber} onSubmit={onSubmit} />
           {!isNumberValid && (
             <p className="text-red-800 text-center mt-10">
-              This field cant be 0 or empty or negative.
+              Please enter positive number in range(1,16).
             </p>
           )}
         </>
@@ -64,6 +69,7 @@ const TextGenerator = (props) => {
                 name="Clear"
                 className="text-black ml-auto hover:cursor-pointer"
                 onClick={(e) => {
+                  setNumber(0);
                   setIsShown(false);
                 }}
               />

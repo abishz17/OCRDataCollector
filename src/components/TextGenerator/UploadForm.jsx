@@ -94,6 +94,10 @@ const UploadForm = (props) => {
           </div>
         )}
       </div>
+      <p className="text-md md:text-lg my-3 py-3 text-red-900 text-center">
+        ! Write on A4 paper, maintain a healthy line spacing and capture the
+        image in a bright lightened environment.
+      </p>
       {!icon && isImageValid && (
         <div className=" flex flex-row mt-5 justify-center ">
           <Button

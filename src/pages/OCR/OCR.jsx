@@ -10,6 +10,7 @@ const OCR = () => {
   const [isSuccess, setSuccess] = useState(false);
 
   const fileSetter = (f) => {
+    console.log(f);
     setFile(f);
     setFileName(f.name);
     setSrc(URL.createObjectURL(f));
@@ -46,16 +47,15 @@ const OCR = () => {
             setSuccess={setSuccess}
           />
         </div>
-        {isSuccess && (
-          <div className="bg-white mb-20 rounded-xl items-center flex-1 ">
-            <Output
-              fileName={fileName}
-              src={src}
-              result={result}
-              unfileSetter={unfileSetter}
-            />
-          </div>
-        )}
+        {/* {isSuccess && ( */}
+        <div className="bg-white mb-20 rounded-xl items-center flex-1 ">
+          <Output
+            fileName={fileName}
+            src={src}
+            result={result}
+            unfileSetter={unfileSetter}
+          />
+        </div>
       </div>
     </div>
   );
