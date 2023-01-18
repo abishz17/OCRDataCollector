@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef, ChangeEvent } from "react";
 import Button from "/src/assets/buttons/Button";
 import ImageField from "./ImageField";
 import Textfield from "./Textfield";
@@ -7,6 +7,8 @@ import toHex from "../../utilities/tohex";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ErrorRounded } from "@mui/icons-material";
+import Keyboard from "react-simple-keyboard";
+
 const Annotation = () => {
   const [text, setText] = useState("");
   const [error, setError] = useState(null);
@@ -15,11 +17,14 @@ const Annotation = () => {
   const [isTextValid, setIsTextValid] = useState(true);
   const [isNepaliText, setIsNepaliText] = useState(false);
   const navigate = useNavigate();
+  const [layout, setLayout] = useState("default");
+  const keyboard = useRef(null);
 
   const unicodeHandler = () => {
     const hexNumber = text.charCodeAt(0).toString(16);
     return parseInt(hexNumber, 16) >= 2304 && parseInt(hexNumber, 16) <= 2431; //devanagari script range
   };
+
   const uploadHandler = () => {
     console.log("Clickk");
     if (text.trim() === "") {
@@ -67,15 +72,45 @@ const Annotation = () => {
   useEffect(() => {
     getImage();
   }, []);
+  const changeHandler = (text) => {
+    setText(text);
+  };
+  const handleShift = () => {
+    const newLayoutName = layout === "default" ? "shift" : "default";
+    setLayout(newLayoutName);
+  };
+  const onKeyPress = (button) => {
+    if (button == "{shift}") {
+      handleShift();
+    }
+  };
+  const onChangeInput = (e) => {
+    setText(e.target.value);
+    keyboard.current.setInput(e.target.value);
+  };
 
   return (
     <>
-      <div className="block m-auto relative h-[85vh] mx-4 md:mx-10 border-1 border-cyan-200">
+      <div className="block m-auto relative mx-4 md:mx-10 h-[85vh] border-1 border-cyan-200">
         <>
           <ImageField image={image} />
-          <div className=" block m-auto mt-10 md:w-4/5 overflow-y-auto text-center h-[30%] rounded-md border-white">
-            <Textfield setText={setText} text={text} />
+          <div className=" block m-auto mt-10 md:w-4/5 overflow-y-auto text-center   rounded-md border-white">
+            <input
+              value={text}
+              placeholder="Enter text here.."
+              onChange={onChangeInput}
+              className="w-full h-20 px-10 py-3 my-5 md:my-0 rounded-xl border-none box-border"
+            />
+            <div className="hidden md:block">
+              <Keyboard
+                keyboardRef={(r) => (keyboard.current = r)}
+                layoutName={layout}
+                onChange={changeHandler}
+                onKeyPress={onKeyPress}
+              />
+            </div>
           </div>
+
           {error && <p>{error}</p>}
           <center>
             <Button name="Submit " onClick={uploadHandler} />
