@@ -67,6 +67,7 @@ const UploadForm = (props) => {
           accept="image/*"
           onChange={selectFile}
           ref={fileRef}
+          capture="camera"
           className="hidden"
         ></input>
 

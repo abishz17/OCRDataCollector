@@ -3,7 +3,7 @@ import Button from "/src/assets/buttons/Button";
 import ImageField from "./ImageField";
 import Textfield from "./Textfield";
 import toHex from "../../utilities/tohex";
-
+import nepali from "./Nepali";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ErrorRounded } from "@mui/icons-material";
@@ -94,19 +94,21 @@ const Annotation = () => {
       <div className="block m-auto relative mx-4 md:mx-10 h-[85vh] border-1 border-cyan-200">
         <>
           <ImageField image={image} />
-          <div className=" block m-auto mt-10 md:w-4/5 overflow-y-auto text-center   rounded-md border-white">
+          <div className=" block m-auto mt-10 md:w-4/5 overflow-y-auto text-center pt-2   rounded-md border-white">
             <input
               value={text}
               placeholder="Enter text here.."
               onChange={onChangeInput}
-              className="w-full h-20 px-10 py-3 my-5 md:my-0 rounded-xl border-none box-border"
+              className="w-full h-20 px-10 p-3 my-5 md:my-0 rounded-xl border-none box-border"
             />
             <div className="hidden md:block">
               <Keyboard
                 keyboardRef={(r) => (keyboard.current = r)}
                 layoutName={layout}
+                layout={nepali}
                 onChange={changeHandler}
                 onKeyPress={onKeyPress}
+                physicalKeyboardHighlight={true}
               />
             </div>
           </div>
