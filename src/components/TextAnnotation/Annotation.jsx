@@ -17,6 +17,7 @@ const Annotation = () => {
   const [isTextValid, setIsTextValid] = useState(true);
   const [isNepaliText, setIsNepaliText] = useState(false);
   const navigate = useNavigate();
+
   const [layout, setLayout] = useState("default");
   const keyboard = useRef(null);
 
@@ -77,10 +78,21 @@ const Annotation = () => {
   };
   const handleShift = () => {
     const newLayoutName = layout === "default" ? "shift" : "default";
+
     setLayout(newLayoutName);
   };
   const onKeyPress = (button) => {
     if (button == "{shift}") {
+      handleShift();
+    }
+  };
+  const onKeyDown = (e) => {
+    if (e.key === "Shift") {
+      handleShift();
+    }
+  };
+  const onKeyUp = (e) => {
+    if (e.key === "Shift") {
       handleShift();
     }
   };
@@ -99,6 +111,8 @@ const Annotation = () => {
               value={text}
               placeholder="Enter text here.."
               onChange={onChangeInput}
+              onKeyDown={onKeyDown}
+              onKeyUp={onKeyUp}
               className="w-full h-20 px-10 p-3 my-5 md:my-0 rounded-xl border-none box-border"
             />
             <div className="hidden md:block">
@@ -108,7 +122,10 @@ const Annotation = () => {
                 layout={nepali}
                 onChange={changeHandler}
                 onKeyPress={onKeyPress}
+                syncInstanceInputs={true}
                 physicalKeyboardHighlight={true}
+                mergeDisplay={true}
+                debug={true}
               />
             </div>
           </div>

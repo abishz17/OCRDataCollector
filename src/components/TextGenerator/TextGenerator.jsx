@@ -74,7 +74,7 @@ const TextGenerator = (props) => {
               />
             </div>
           </div>
-          <UploadForm text={text} />
+          <UploadForm text={text} number={number} />
         </div>
       )}
     </div>
