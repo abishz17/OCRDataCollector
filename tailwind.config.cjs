@@ -5,7 +5,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        'inter':["Inter"]
+      }
+    },
+    
     colors:{
       primary: '#23122b',
       secondary: '#1C1736',

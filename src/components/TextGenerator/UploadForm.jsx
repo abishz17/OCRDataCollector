@@ -42,6 +42,7 @@ const UploadForm = (props) => {
     const formData = new FormData();
     formData.append("image", selectedFile);
     formData.append("label", props.text);
+    formData.append("lines", props.number);
 
     axios
       .post("/api/", formData, {
@@ -67,6 +68,7 @@ const UploadForm = (props) => {
           accept="image/*"
           onChange={selectFile}
           ref={fileRef}
+          capture="camera"
           className="hidden"
         ></input>
 

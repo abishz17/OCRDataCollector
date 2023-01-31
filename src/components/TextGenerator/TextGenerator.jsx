@@ -46,7 +46,7 @@ const TextGenerator = (props) => {
         </>
       )}
       {isShown && (
-        <div className="block m-auto relative h-[85vh] mx-4 md:mx-10 border-1 border-cyan-200">
+        <div className="block m-auto relative h-screen md:h-[85vh] mx-4 md:mx-10 border-1 border-cyan-200">
           <LineText
             text={text}
             open={open}
@@ -74,7 +74,7 @@ const TextGenerator = (props) => {
               />
             </div>
           </div>
-          <UploadForm text={text} />
+          <UploadForm text={text} number={number} />
         </div>
       )}
     </div>

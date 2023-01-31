@@ -9,6 +9,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
   @apply leading-[normal] m-0;
 }
