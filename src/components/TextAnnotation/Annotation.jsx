@@ -1,12 +1,11 @@
 import { React, useState, useEffect, useRef, ChangeEvent } from "react";
 import Button from "/src/assets/buttons/Button";
 import ImageField from "./ImageField";
-import Textfield from "./Textfield";
-import toHex from "../../utilities/tohex";
+
 import nepali from "./Nepali";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { ErrorRounded } from "@mui/icons-material";
+
 import Keyboard from "react-simple-keyboard";
 
 const Annotation = () => {
@@ -14,33 +13,18 @@ const Annotation = () => {
   const [error, setError] = useState(null);
   const [image, setImage] = useState("");
   const [imageid, setImageid] = useState("");
-  const [isTextValid, setIsTextValid] = useState(true);
-  const [isNepaliText, setIsNepaliText] = useState(false);
   const navigate = useNavigate();
 
   const [layout, setLayout] = useState("default");
   const keyboard = useRef(null);
 
-  const unicodeHandler = () => {
-    const hexNumber = text.charCodeAt(0).toString(16);
-    return parseInt(hexNumber, 16) >= 2304 && parseInt(hexNumber, 16) <= 2431; //devanagari script range
-  };
-
   const uploadHandler = () => {
-    console.log("Clickk");
     if (text.trim() === "") {
-      setIsTextValid(false);
       setError("Enter valid text");
       return;
     }
-    if (!unicodeHandler) {
-      console.log("Devanagari script only allowed");
-      setIsNepaliText(false);
-      return;
-    }
+
     if (!error) {
-      setIsTextValid(true);
-      setIsNepaliText(true);
       const formData = new FormData();
       formData.append("image", imageid);
       formData.append("ocr_text", text);
@@ -82,7 +66,7 @@ const Annotation = () => {
     setLayout(newLayoutName);
   };
   const onKeyPress = (button) => {
-    if (button == "{shift}") {
+    if (button == "{shiftleft}" || button == "{shiftright}") {
       handleShift();
     }
   };
