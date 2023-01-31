@@ -1,5 +1,8 @@
 import React from "react";
 import Keyboard from "react-simple-keyboard";
+import nepalify from "nepalify";
+
+
 const KeyboardLayout = () => {
   const handleChange = () => {
     console.log("Input Changed");

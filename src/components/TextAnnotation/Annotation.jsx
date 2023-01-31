@@ -8,6 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ErrorRounded } from "@mui/icons-material";
 import Keyboard from "react-simple-keyboard";
+import nepalify from "nepalify";
 
 const Annotation = () => {
   const [text, setText] = useState("");
@@ -98,8 +99,10 @@ const Annotation = () => {
     }
   };
   const onChangeInput = (e) => {
-    setText(e.target.value);
-    keyboard.current.setInput(e.target.value);
+    // setText(e.target.value);
+    // keyboard.current.setInput(e.target.value);
+    setText(nepalify.format(e.target.value));
+
   };
 
   return (
