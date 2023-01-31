@@ -10,8 +10,8 @@ const Textfield = (props) => {
   };
 
   return (
-    <>  
-      <div className="bg-gray-100 ">
+    <>
+      <div className="bg-gray-100">
         <TextField
           // id="nepali"
           variant="standard"

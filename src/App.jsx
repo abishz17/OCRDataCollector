@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import Data from "./pages/Data/Data";
 import Privacy from "./pages/Privacy/Privacy";
 import About from "./pages/About/About";
-
+import { useState } from "react";
 import Footer from "./components/Footer/Footer";
 import Annotation from "./components/TextAnnotation/Annotation";
 import TextGenerator from "./components/TextGenerator/TextGenerator";
@@ -14,22 +14,31 @@ import FeedBackForm from "./components/Feedback/FeedBackForm";
 import Videosample from "./components/Videosample/Videosample";
 import Error404 from "./pages/Error/Error404";
 import ComingSoon from "./pages/Error/ComingSoon";
+import OCR from "./pages/OCR/OCR";
 
 const App = () => {
   return (
-    <div className="text-black">
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/data" element={<Data />} />
-        <Route exact path="/data/annotate" element={<Annotation />} />
-        <Route exact path="/data/text" element={<TextGenerator data={dic} />} />
-        <Route exact path="/sample" element={<Videosample />} />
-        <Route exact path="/ocr" element={<ComingSoon />} />
-        <Route exact path="/about" element={<About />} />
-        <Route path="*" element={<Error404 />} />
-      </Routes>
+    <div className="text-black min-h-screen relative flex flex-col bg-gray-200">
+      <div className="">
+        <Navbar />
+
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/data" element={<Data />} />
+          <Route exact path="/data/annotate" element={<Annotation />} />
+          <Route
+            exact
+            path="/data/text"
+            element={<TextGenerator data={dic} />}
+          />
+          <Route exact path="/sample" element={<Videosample />} />
+          <Route exact path="/ocr" element={<OCR />} />
+          <Route exact path="/about" element={<About />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </div>
       <FeedBackForm />
+
       <Footer />
     </div>
   );

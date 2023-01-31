@@ -1,19 +1,16 @@
-// function get_random(list) {
-//     return list[Math.floor(Math.random() * list.length)];
-//   }
 
-const get_random = (list) => {
-  return list[Math.floor(Math.random() * list.length)];
-};
+
 export const makeASentence = (arr, n) => {
-  let str = "";
-  const par_length = n * 6;
-  for (let i = 0; i < par_length; i++) {
-    if (i % 6 === 0) {
-      str = str + "\n";
-    }
-    str = str + " " + get_random(arr);
+  
+  n = parseInt(n);
+  const x = Math.floor(Math.random()*(arr.length-n));
+  console.log("this x" ,x)
+  console.log("this x+m" ,x+n)
+  let str = arr[x]
+  for(let i=x+1; i<x+n;i++){
+    str += "\n" + arr[i];
   }
+
 
   // console.log(str);
   return str;

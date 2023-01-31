@@ -3,14 +3,12 @@ import { useState } from "react";
 import LineText from "./LineText";
 import Ninput from "./Ninput";
 import UploadForm from "./UploadForm";
-import { Button } from "@mui/material";
-import Model from "./Modal";
+import Button from "/src/assets/buttons/Button";
 import { makeASentence } from "../../utilities/makeSentence";
 
-import { useEffect } from "react";
 const TextGenerator = (props) => {
   const [isShown, setIsShown] = useState(false);
-  const [number, setNumber] = useState(5);
+  const [number, setNumber] = useState(0);
   const [text, setText] = useState("");
   const [open, setOpen] = useState(false);
   const [isNumberValid, setIsNumberValid] = useState(true);
@@ -19,31 +17,36 @@ const TextGenerator = (props) => {
     setNumber(selectedNumber);
   };
   const onSubmit = () => {
-    if (number === "0" || number === "") {
+    if (
+      number === 0 ||
+      number.length == 0 ||
+      parseInt(number) < 0 ||
+      number > 15 ||
+      number === "0"
+    ) {
       setIsNumberValid(false);
-      console.log("Invalid");
       return;
     }
     setIsNumberValid(true);
-    console.log(number);
+
     setIsShown(true);
     setText(makeASentence(props.data, number));
   };
 
   return (
-    <div className="lg:ml-7">
+    <div className="lg:ml-7 z-1">
       {!isShown && (
         <>
           <Ninput getNumber={getNumber} onSubmit={onSubmit} />
           {!isNumberValid && (
             <p className="text-red-800 text-center mt-10">
-              This field cant be 0 or empty.
+              Please enter positive number in range(1,16).
             </p>
           )}
         </>
       )}
       {isShown && (
-        <div className="flex flex-col lg:flex-row lg:mx-3">
+        <div className="block m-auto relative h-screen md:h-[85vh] mx-4 md:mx-10 border-1 border-cyan-200">
           <LineText
             text={text}
             open={open}
@@ -51,10 +54,27 @@ const TextGenerator = (props) => {
             setIsShown={setIsShown}
             setText={setText}
           />
+          <div className=" flex justify-center m-auto md:w-4/5 text-center">
+            <div className="mt-5">
+              <Button
+                name="Expand"
+                title="Expand"
+                onClick={() => {
+                  setOpen(true);
+                }}
+              />
 
-          <div className="basis-1/2 pl-5 pr-5 relative text-center lg:border-l-2 border-black">
-            <UploadForm text={text} />
+              <Button
+                name="Clear"
+                className="text-black ml-auto hover:cursor-pointer"
+                onClick={(e) => {
+                  setNumber(0);
+                  setIsShown(false);
+                }}
+              />
+            </div>
           </div>
+          <UploadForm text={text} number={number} />
         </div>
       )}
     </div>
