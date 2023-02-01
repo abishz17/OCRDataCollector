@@ -14,6 +14,7 @@ const Annotation = () => {
   const [error, setError] = useState(null);
   const [image, setImage] = useState("");
   const [imageid, setImageid] = useState("");
+  const [layoutmap, setLayoutmap] = useState(null);
   const navigate = useNavigate();
 
   const [layout, setLayout] = useState("default");
@@ -55,7 +56,6 @@ const Annotation = () => {
     });
   };
 
-
   useEffect(() => {
     getImage();
   }, []);
@@ -86,7 +86,6 @@ const Annotation = () => {
     // setText(e.target.value);
     // keyboard.current.setInput(e.target.value);
     setText(nepalify.format(e.target.value));
-
   };
 
   return (
@@ -107,7 +106,7 @@ const Annotation = () => {
               <Keyboard
                 keyboardRef={(r) => (keyboard.current = r)}
                 layoutName={layout}
-                layout={nepali}
+                layout={layoutmap}
                 onChange={changeHandler}
                 onKeyPress={onKeyPress}
                 syncInstanceInputs={true}
