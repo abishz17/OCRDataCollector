@@ -14,12 +14,13 @@ import FeedBackForm from "./components/Feedback/FeedBackForm";
 import Videosample from "./components/Videosample/Videosample";
 import Error404 from "./pages/Error/Error404";
 import ComingSoon from "./pages/Error/ComingSoon";
-import OCR from "./pages/OCR/OCR";
+import OCR from "./pages/OCR/OCR_ready";
+import OCR_ready from "./pages/OCR/OCR_ready";
 
 const App = () => {
   return (
-    <div className="text-black min-h-screen relative flex flex-col bg-gray-200">
-      <div className="">
+    <div className="text-black relative flex flex-col min-h-screen bg-gray-200">
+      <div className="pb-16 md:pb-0">
         <Navbar />
 
         <Routes>
@@ -32,7 +33,7 @@ const App = () => {
             element={<TextGenerator data={dic} />}
           />
           <Route exact path="/sample" element={<Videosample />} />
-          <Route exact path="/ocr" element={<OCR />} />
+          <Route exact path="/ocr" element={<ComingSoon />} />
           <Route exact path="/about" element={<About />} />
           <Route path="*" element={<Error404 />} />
         </Routes>

@@ -2,10 +2,9 @@ import { React, useState, useEffect, useRef, ChangeEvent } from "react";
 import Button from "/src/assets/buttons/Button";
 import ImageField from "./ImageField";
 
-import nepali from "./Nepali";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import display from "./Nepali";
 import Keyboard from "react-simple-keyboard";
 import nepalify from "nepalify";
 
@@ -90,19 +89,19 @@ const Annotation = () => {
 
   return (
     <>
-      <div className="block m-auto relative mx-4 md:mx-10 h-[85vh] border-1 border-cyan-200">
+      <div className="block m-auto relative mx-4 md:mx-10 md:min-h-screen lg:min-h-fit lg:p-10 border-1 border-cyan-200">
         <>
           <ImageField image={image} />
-          <div className=" block m-auto mt-10 md:w-4/5 overflow-y-auto text-center pt-2   rounded-md border-white">
+          <div className=" block m-auto mt-10  md:w-4/5 overflow-y-auto text-center p-2  rounded-md border-white">
             <input
               value={text}
               placeholder="Enter text here.."
               onChange={onChangeInput}
               onKeyDown={onKeyDown}
               onKeyUp={onKeyUp}
-              className="w-full h-20 px-10 p-3 my-5 md:my-0 rounded-xl border-none box-border"
+              className="w-full h-20 md:h-20 lg:h-32 px-10 p-3 my-5 md:my-0 rounded-xl border-none box-border"
             />
-            <div className="hidden md:block">
+            <div className="hidden md:block py-6">
               <Keyboard
                 keyboardRef={(r) => (keyboard.current = r)}
                 layoutName={layout}
@@ -113,14 +112,14 @@ const Annotation = () => {
                 physicalKeyboardHighlight={true}
                 mergeDisplay={true}
                 debug={true}
+                display={display}
               />
             </div>
+            {error && <p>{error}</p>}
+            <center className="mb-5 ">
+              <Button name="Submit " onClick={uploadHandler} />
+            </center>
           </div>
-
-          {error && <p>{error}</p>}
-          <center>
-            <Button name="Submit " onClick={uploadHandler} />
-          </center>
         </>
       </div>
     </>

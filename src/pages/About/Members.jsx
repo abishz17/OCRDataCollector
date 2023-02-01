@@ -54,6 +54,6 @@ export const members = [
     github: "https://github.com/Manjeet-pandey",
     email: "075bct048.manjeet@pcampus.edu.np",
     description:
-      "My name is Manjeet Pandey, I am a computer engineering student with a passion for Machine Learning and Cybersecurity . I aim to make an impact in technology by utilizing my problem-solving skills and seeking opportunities to learn and lead.",
+      "Hello, I'm Manjeet Pandey, I am a computer engineering student with a passion for Machine Learning and Cybersecurity . I aim to make an impact in technology by utilizing my problem-solving skills and seeking opportunities to learn and lead.",
   },
 ];

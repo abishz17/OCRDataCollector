@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Error404 = () => {
   return (
-    <div className="h-[80vh]">
+    <div className="h-screen">
       <main class="h-full w-full flex flex-col justify-center items-center bg-[#ffffff]">
         <h1 class="text-9xl font-extrabold text-black tracking-widest">404</h1>
         <div class="bg-[#8d260d] px-2 text-sm rounded rotate-12 absolute">

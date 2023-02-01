@@ -42,7 +42,7 @@ const FeedbackForm = () => {
       console.log(formData);
 
       axios
-        .post("api/feedback", formData, {
+        .post("/api/feedback", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -63,13 +63,13 @@ const FeedbackForm = () => {
   };
   return (
     <div className="w-full bg-feedback pb-5">
-      <h2 className="text-3xl font-bold py-10 text-center ">
+      <h2 className="text-3xl font-bold py-10 pl-2 text-center ">
         Share Your Experience with us
       </h2>
-      <div className="md:text-left lg:px-48 md:px-12 px-4">
+      <div className="text-left lg:px-48 md:px-12 px-4">
         <section className="mb-32 text-gray-800">
           <div className="flex flex-col md:flex-row lg:flex-row justify-between gap-x-10 ">
-            <div className=" mb-6 md:mb-0  md:w-6/12 pl-3 lg:pl-6">
+            <div className=" mb-6 md:mb-0 md:w-6/12 md:pl-6 lg:pl-6">
               <p className="text-gray-500 mb-6">
                 We appreciate your visit to our website and value your feedback.
                 Please take a few minutes to complete this form and let us know
@@ -78,10 +78,12 @@ const FeedbackForm = () => {
               </p>
               <p className="text-gray-500 mb-2 text-center">Pulchowk Campus</p>
               <p className="text-gray-500 mb-2 text-center">
-                manjeet.pandey1@gmail.com
+                <a href="mailto:hello@manjeetpandey.com.np">
+                  hello@manjeetpandey.com.np
+                </a>
               </p>
             </div>
-            <div className="mb-12 md:mb-0 w-full md:w-6/12 pl-6 lg:pl-10">
+            <div className="mb-12 md:mb-0 w-full md:w-6/12 md:pl-6 lg:pl-10">
               <form>
                 <div className="form-group mb-6">
                   <input
