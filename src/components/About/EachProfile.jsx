@@ -3,7 +3,7 @@ import React from "react";
 const EachCard = (props) => {
   return (
     <div class="w-full bg-gray-900 rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row ">
-      <div class="w-2/3 m-auto md:m-0 flex-none md:w-2/5 md:h-80 ">
+      <div class="w-2/3 m-auto md:m-0 flex-none md:w-2/5 h-80 ">
         <img
           class="md:p-5  object-cover w-full h-full "
           src={props.item.image}

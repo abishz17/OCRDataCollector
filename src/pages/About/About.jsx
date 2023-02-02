@@ -4,12 +4,10 @@ import Profiles from "/src/components/About/Profiles";
 
 const About = () => {
   return (
-    <div class="w-full bg-gray-800 pb-20 text-white">
-      <section class="max-w-6xl m-auto">
+    <div class="w-full bg-gray-800 pb-20 text-white pt-12 md:mt-0  flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4">
+      <section class=" m-auto">
         <header class="p-6">
-          <h1 class="text-3xl font-medium text-center pt-10">
-            About Us - NepaliOCR
-          </h1>
+          <h1 class="text-3xl font-medium text-center">About Us - NepaliOCR</h1>
         </header>
         <main class="p-6">
           <p class="text-lg py-2">

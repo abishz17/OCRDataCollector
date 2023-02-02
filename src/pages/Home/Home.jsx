@@ -21,8 +21,9 @@ const Home = () => {
             <NavLink to="/ocr">
               <Button name="Convert" />
             </NavLink>
-
-            <Button name="Watch Sample" />
+            <NavLink to="/data">
+              <Button name="Provide Data" />
+            </NavLink>
           </div>
         </div>
         <div className="hidden lg:block justify-around mt-4 md:mt-0 md:flex-1 ">
