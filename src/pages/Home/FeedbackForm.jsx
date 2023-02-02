@@ -42,7 +42,7 @@ const FeedbackForm = () => {
       console.log(formData);
 
       axios
-        .post("/api/feedback", formData, {
+        .post("/feedback/", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
