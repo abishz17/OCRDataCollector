@@ -1,0 +1,17 @@
+.App {
+  position: relative;
+}
+
+.annotation-area {
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+.annotation {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.5);
+  color: #fff;
+}

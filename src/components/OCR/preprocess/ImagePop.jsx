@@ -10,7 +10,7 @@ const ImagePop = (props) => {
     const formData = new FormData();
     formData.append("image", props.file);
     try {
-      const res = await axios.post("/ocr/ocr/", formData, {
+      const res = await axios.post("http://localhost:8000/ocr/ocr/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

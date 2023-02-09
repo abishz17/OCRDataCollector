@@ -14,8 +14,9 @@ import FeedBackForm from "./components/Feedback/FeedBackForm";
 import Videosample from "./components/Videosample/Videosample";
 import Error404 from "./pages/Error/Error404";
 import ComingSoon from "./pages/Error/ComingSoon";
-import OCR from "./pages/OCR/OCR_ready";
-import OCR_ready from "./pages/OCR/OCR_ready";
+import Draw_box from "./components/EditOCR/Draw_box";
+
+import OCR from "./pages/OCR/OCR";
 
 const App = () => {
   return (
@@ -33,8 +34,9 @@ const App = () => {
             element={<TextGenerator data={dic} />}
           />
           <Route exact path="/sample" element={<Videosample />} />
-          <Route exact path="/ocr" element={<ComingSoon />} />
+          <Route exact path="/ocr" element={<OCR />} />
           <Route exact path="/about" element={<About />} />
+          <Route exact path="/try" element={<Draw_box />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </div>
