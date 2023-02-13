@@ -96,20 +96,24 @@ const UploadForm = (props) => {
           </div>
         )}
       </div>
-      <p className="text-md md:text-lg my-3 py-3 text-red-900 text-center">
-        ! Write on A4 paper, maintain a healthy line spacing and capture the
-        image in a bright lightened environment.
-      </p>
+      {icon && !isImageValid && (
+        <p className="text-sm md:text-lg md:my-3 py-3 text-red-900 text-center">
+          ! Write on A4 paper, maintain a healthy line spacing and capture the
+          image in a bright lightened environment.
+        </p>
+      )}
       {!icon && isImageValid && (
-        <div className=" flex flex-row mt-5 justify-center ">
-          <Button
-            name="Re-upload"
-            onClick={() => {
-              setIcon(true);
-              setIsImageValid(false);
-            }}
-          />
-          <Button name="Submit" onClick={uploadHandler} />
+        <div className="flex justify-center m-auto md:w-4/5 text-center">
+          <div className="mt-5">
+            <Button
+              name="Re-upload"
+              onClick={() => {
+                setIcon(true);
+                setIsImageValid(false);
+              }}
+            />
+            <Button name="Submit" onClick={uploadHandler} />
+          </div>
         </div>
       )}
     </>

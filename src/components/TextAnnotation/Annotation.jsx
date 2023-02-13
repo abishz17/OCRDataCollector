@@ -75,8 +75,10 @@ const Annotation = () => {
   };
   const onKeyDown = (e) => {
     console.log(e.key);
-    if (e.key === "Shift") {
-      handleShift();
+    if (!isshiftheld) {
+      if (e.key === "Shift") {
+        handleShift();
+      }
     }
   };
   const onKeyUp = (e) => {
@@ -124,7 +126,7 @@ const Annotation = () => {
                 display={display}
                 buttonTheme={[
                   {
-                    class: isshiftheld ? "hg-red" : "",
+                    class: isshiftheld ? "hg-red" : "hg-default",
                     buttons: "{shiftleft} {shiftright}",
                   },
                 ]}

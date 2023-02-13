@@ -20,7 +20,7 @@ import OCR_ready from "./pages/OCR/OCR_ready";
 const App = () => {
   return (
     <div className="text-black relative flex flex-col min-h-screen bg-gray-200">
-      <div className="pb-16 md:pb-0">
+      <div className="mb-16 md:pb-0">
         <Navbar />
 
         <Routes>
